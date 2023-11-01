@@ -67,6 +67,7 @@ namespace QuanLyDienThoai
                 f.Logout += F_Logout;
             }
             else
+
             {
                 MessageBox.Show("Tai khan khong dung", "Thong bao", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtMatKhau.Text = "";
