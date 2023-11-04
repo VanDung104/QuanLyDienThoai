@@ -30,7 +30,6 @@
         {
             this.dgvNhapHang = new System.Windows.Forms.DataGridView();
             this.grbChiTietNhap = new System.Windows.Forms.GroupBox();
-            this.lsbBoNho = new System.Windows.Forms.ListBox();
             this.txtSLM = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,6 +45,8 @@
             this.btnThemHangMoi = new System.Windows.Forms.Button();
             this.txtSL = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.cbmBoNho = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhapHang)).BeginInit();
             this.grbChiTietNhap.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +64,7 @@
             // 
             // grbChiTietNhap
             // 
-            this.grbChiTietNhap.Controls.Add(this.lsbBoNho);
+            this.grbChiTietNhap.Controls.Add(this.cbmBoNho);
             this.grbChiTietNhap.Controls.Add(this.txtSLM);
             this.grbChiTietNhap.Controls.Add(this.label6);
             this.grbChiTietNhap.Controls.Add(this.label5);
@@ -81,21 +82,6 @@
             this.grbChiTietNhap.TabIndex = 1;
             this.grbChiTietNhap.TabStop = false;
             this.grbChiTietNhap.Text = "Chi tiết nhập";
-            // 
-            // lsbBoNho
-            // 
-            this.lsbBoNho.FormattingEnabled = true;
-            this.lsbBoNho.ItemHeight = 16;
-            this.lsbBoNho.Items.AddRange(new object[] {
-            "64GB",
-            "128GB",
-            "256GB",
-            "512GB",
-            "1TB"});
-            this.lsbBoNho.Location = new System.Drawing.Point(432, 78);
-            this.lsbBoNho.Name = "lsbBoNho";
-            this.lsbBoNho.Size = new System.Drawing.Size(147, 20);
-            this.lsbBoNho.TabIndex = 2;
             // 
             // txtSLM
             // 
@@ -189,7 +175,7 @@
             // 
             // btnNhap
             // 
-            this.btnNhap.Location = new System.Drawing.Point(348, 520);
+            this.btnNhap.Location = new System.Drawing.Point(320, 520);
             this.btnNhap.Name = "btnNhap";
             this.btnNhap.Size = new System.Drawing.Size(122, 43);
             this.btnNhap.TabIndex = 0;
@@ -199,12 +185,13 @@
             // 
             // btnThemHangMoi
             // 
-            this.btnThemHangMoi.Location = new System.Drawing.Point(549, 520);
+            this.btnThemHangMoi.Location = new System.Drawing.Point(483, 520);
             this.btnThemHangMoi.Name = "btnThemHangMoi";
             this.btnThemHangMoi.Size = new System.Drawing.Size(122, 43);
             this.btnThemHangMoi.TabIndex = 0;
             this.btnThemHangMoi.Text = "Thêm Hàng Mới";
             this.btnThemHangMoi.UseVisualStyleBackColor = true;
+            this.btnThemHangMoi.Click += new System.EventHandler(this.btnThemHangMoi_Click);
             // 
             // txtSL
             // 
@@ -222,11 +209,36 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Số lượng nhập:";
             // 
+            // btnLuu
+            // 
+            this.btnLuu.Location = new System.Drawing.Point(640, 520);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(122, 43);
+            this.btnLuu.TabIndex = 2;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // cbmBoNho
+            // 
+            this.cbmBoNho.FormattingEnabled = true;
+            this.cbmBoNho.Items.AddRange(new object[] {
+            "64GB",
+            "128GB",
+            "256GB",
+            "512GB",
+            "1TB"});
+            this.cbmBoNho.Location = new System.Drawing.Point(432, 72);
+            this.cbmBoNho.Name = "cbmBoNho";
+            this.cbmBoNho.Size = new System.Drawing.Size(147, 24);
+            this.cbmBoNho.TabIndex = 2;
+            // 
             // frmNhapHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 587);
+            this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnThemHangMoi);
             this.Controls.Add(this.btnNhap);
             this.Controls.Add(this.grbChiTietNhap);
@@ -234,6 +246,7 @@
             this.Controls.Add(this.txtSL);
             this.Controls.Add(this.label7);
             this.Name = "frmNhapHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmNhapHang";
             this.Load += new System.EventHandler(this.frmNhapHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhapHang)).EndInit();
@@ -260,9 +273,10 @@
         private System.Windows.Forms.TextBox txtTenHang;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMaHH;
-        private System.Windows.Forms.ListBox lsbBoNho;
         private System.Windows.Forms.Button btnThemHangMoi;
         private System.Windows.Forms.TextBox txtSL;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.ComboBox cbmBoNho;
     }
 }
