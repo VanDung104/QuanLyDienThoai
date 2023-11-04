@@ -9,7 +9,7 @@ namespace QuanLyDienThoai.Classes
 {
     internal class DataBaseProcess
     {
-        string strCon = "Data Source=DESKTOP-RF89ARN\\SQLEXPRESS;Initial Catalog=QLDienThoai_Csharp;Integrated Security=True";
+        string strCon = "Data Source=DESKTOP-KASIRH6;Initial Catalog=QLDienThoai_Csharp;Integrated Security=True";
         SqlConnection sqlCon = null;
         void OpenConnect()
         {

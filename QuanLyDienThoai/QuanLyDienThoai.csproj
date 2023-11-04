@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Classes\CommonFunctions.cs" />
     <Compile Include="Classes\DataProcess.cs" />
+    <Compile Include="Classes\Functions.cs" />
     <Compile Include="Forms\frmDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +66,12 @@
     </Compile>
     <Compile Include="Forms\frmNhaCungCap.Designer.cs">
       <DependentUpon>frmNhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmNhapHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmNhapHang.Designer.cs">
+      <DependentUpon>frmNhapHang.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmSanPham.cs">
       <SubType>Form</SubType>
@@ -112,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmNhaCungCap.resx">
       <DependentUpon>frmNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmNhapHang.resx">
+      <DependentUpon>frmNhapHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSanPham.resx">
       <DependentUpon>frmSanPham.cs</DependentUpon>
