@@ -192,6 +192,7 @@
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.Name = "frmMainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMainMenu";
             this.panelMenu.ResumeLayout(false);
             this.panelTitleBar.ResumeLayout(false);

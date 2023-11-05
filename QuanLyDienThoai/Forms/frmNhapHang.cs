@@ -24,6 +24,7 @@ namespace QuanLyDienThoai.Forms
         int slcon;
         private void dgvNhapHang_Click(object sender, EventArgs e)
         {
+            ResetValue();
             maHH = dgvNhapHang.CurrentRow.Cells[0].Value.ToString();
             string temp = dgvNhapHang.CurrentRow.Cells[4].Value.ToString();
             slcon = Convert.ToInt32(temp);
@@ -31,6 +32,7 @@ namespace QuanLyDienThoai.Forms
             grbChiTietNhap.Enabled = false;
             btnNhap.Enabled = true;
             txtSL.Enabled = true;
+            btnLuu.Enabled = false;
         }
 
         private void btnNhap_Click(object sender, EventArgs e)
@@ -49,7 +51,9 @@ namespace QuanLyDienThoai.Forms
                 btnThemHangMoi.Enabled = true;
                 MessageBox.Show("Bạn đã nhập hàng thành công!", "Thông báo",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                txtSL.Text = "";
+                btnNhap.Enabled = false;
+                txtSL.Enabled = false;
             }
         }
         void ResetValue()
@@ -63,6 +67,7 @@ namespace QuanLyDienThoai.Forms
         }
         private void frmNhapHang_Load(object sender, EventArgs e)
         {
+            btnLuu.Enabled = false;
             grbChiTietNhap.Enabled = false;
             txtSL.Enabled = false;
             btnNhap.Enabled = false;
@@ -72,6 +77,7 @@ namespace QuanLyDienThoai.Forms
         private void btnThemHangMoi_Click(object sender, EventArgs e)
         {
             ResetValue();
+            btnLuu.Enabled = true;
             btnNhap.Enabled = false;
             grbChiTietNhap.Enabled = true;
             string str = "HH" + DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString();
