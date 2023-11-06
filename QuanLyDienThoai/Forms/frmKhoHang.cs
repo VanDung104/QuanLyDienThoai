@@ -33,6 +33,9 @@ namespace QuanLyDienThoai.Forms
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
+            btnNhapHang.Enabled = true;
+            btnIn.Enabled = true;
+            btnXoaSanPham.Enabled = false;
             dgvSanPhamKho.DataSource = db.DataReader("select HANGHOA.MaHH,HANGHOA.TenHH, HANGHOA.Hang,HANGHOA.GiaBan,HANGHOA.So_Luong from HANGHOA");
         }
 
@@ -67,6 +70,9 @@ namespace QuanLyDienThoai.Forms
             exSheet.Range["A2"].Font.Size = 13;
             exSheet.Range["A2"].Font.Color = Color.Blue;
             exSheet.Range["A2"].Value = "So3 Cầu Giấy Hà Nội";
+            exSheet.Range["A3"].Font.Size = 13;
+            exSheet.Range["A3"].Font.Color = Color.Black;
+            exSheet.Range["A3"].Value = "holine: 0356276789";
             //in hoa đơn bán
             exSheet.Range["D4"].Font.Size = 20;
             exSheet.Range["D4"].Font.Color = Color.Red;
@@ -108,11 +114,18 @@ namespace QuanLyDienThoai.Forms
         string maHH;
         private void dgvSanPhamKho_Click(object sender, EventArgs e)
         {
-            btnXoaSanPham.Enabled = true;
-            btnNhapHang.Enabled = false;
-            btnTimKiem.Enabled = false;
-            btnIn.Enabled = false;
-            maHH = dgvSanPhamKho.CurrentRow.Cells[0].Value.ToString();
+            try
+            {
+                btnXoaSanPham.Enabled = true;
+                btnNhapHang.Enabled = false;
+                btnTimKiem.Enabled = false;
+                btnIn.Enabled = false;
+                maHH = dgvSanPhamKho.CurrentRow.Cells[0].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("lỗi" + ex.ToString(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnXoaSanPham_Click(object sender, EventArgs e)
@@ -144,6 +157,11 @@ namespace QuanLyDienThoai.Forms
         {
             btnTimKiem.Enabled = true;
             btnXoaSanPham.Enabled = false;
+        }
+
+        private void dgvSanPhamKho_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

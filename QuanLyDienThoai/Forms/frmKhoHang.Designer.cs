@@ -68,6 +68,7 @@
             this.dgvSanPhamKho.RowTemplate.Height = 24;
             this.dgvSanPhamKho.Size = new System.Drawing.Size(674, 274);
             this.dgvSanPhamKho.TabIndex = 1;
+            this.dgvSanPhamKho.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanPhamKho_CellContentClick);
             this.dgvSanPhamKho.Click += new System.EventHandler(this.dgvSanPhamKho_Click);
             // 
             // label2
@@ -120,7 +121,7 @@
             // btnIn
             // 
             this.btnIn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnIn.Location = new System.Drawing.Point(360, 23);
+            this.btnIn.Location = new System.Drawing.Point(354, 23);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(95, 47);
             this.btnIn.TabIndex = 0;
@@ -131,7 +132,7 @@
             // btnLamMoi
             // 
             this.btnLamMoi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnLamMoi.Location = new System.Drawing.Point(46, 23);
+            this.btnLamMoi.Location = new System.Drawing.Point(63, 23);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(95, 47);
             this.btnLamMoi.TabIndex = 0;
@@ -153,7 +154,7 @@
             // btnXoaSanPham
             // 
             this.btnXoaSanPham.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnXoaSanPham.Location = new System.Drawing.Point(526, 23);
+            this.btnXoaSanPham.Location = new System.Drawing.Point(511, 23);
             this.btnXoaSanPham.Name = "btnXoaSanPham";
             this.btnXoaSanPham.Size = new System.Drawing.Size(95, 47);
             this.btnXoaSanPham.TabIndex = 0;

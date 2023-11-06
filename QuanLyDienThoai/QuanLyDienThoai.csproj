@@ -49,6 +49,12 @@
     <Compile Include="Classes\CommonFunctions.cs" />
     <Compile Include="Classes\DataProcess.cs" />
     <Compile Include="Classes\Functions.cs" />
+    <Compile Include="Forms\frmChiTietSanPhamL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmChiTietSanPhamL.Designer.cs">
+      <DependentUpon>frmChiTietSanPhamL.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\frmChiTietSanPhamL.resx">
+      <DependentUpon>frmChiTietSanPhamL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmDonHang.resx">
       <DependentUpon>frmDonHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +203,58 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\ImagePhone\HuaweiMate60.jpg" />
+    <Content Include="bin\ImagePhone\HuaweiP50.jpg" />
+    <Content Include="bin\ImagePhone\Ip11.jpg" />
+    <Content Include="bin\ImagePhone\Ip12.jpg" />
+    <Content Include="bin\ImagePhone\Ip13.jpg" />
+    <Content Include="bin\ImagePhone\Ip14.jpg" />
+    <Content Include="bin\ImagePhone\Ip14plus.jpg" />
+    <Content Include="bin\ImagePhone\Ip14prm.jpg" />
+    <Content Include="bin\ImagePhone\Ip15pro.jpg" />
+    <Content Include="bin\ImagePhone\Ip6.jpg" />
+    <Content Include="bin\ImagePhone\Ip7.jpg" />
+    <Content Include="bin\ImagePhone\Ip8.jpg" />
+    <Content Include="bin\ImagePhone\IpSE.jpeg" />
+    <Content Include="bin\ImagePhone\IpX.jpg" />
+    <Content Include="bin\ImagePhone\IpXr.jpg" />
+    <Content Include="bin\ImagePhone\LenovoK10.jpg" />
+    <Content Include="bin\ImagePhone\LenovoZ5s.jpg" />
+    <Content Include="bin\ImagePhone\Oppo5.jpg" />
+    <Content Include="bin\ImagePhone\OppoA5s.jpg" />
+    <Content Include="bin\ImagePhone\OppoA92.jpg" />
+    <Content Include="bin\ImagePhone\OppoF11.jpg" />
+    <Content Include="bin\ImagePhone\OppoF9.jpg" />
+    <Content Include="bin\ImagePhone\OppoReno5.jpg" />
+    <Content Include="bin\ImagePhone\Realme5i.jpg" />
+    <Content Include="bin\ImagePhone\Realme6.jpg" />
+    <Content Include="bin\ImagePhone\RealmeC3.jpg" />
+    <Content Include="bin\ImagePhone\RealmeC51.jpg" />
+    <Content Include="bin\ImagePhone\SonyXperia5.jpg" />
+    <Content Include="bin\ImagePhone\SsA12.jpg" />
+    <Content Include="bin\ImagePhone\SsA53.jpg" />
+    <Content Include="bin\ImagePhone\SsA71.jpg" />
+    <Content Include="bin\ImagePhone\SsGalaxyJ6.jpg" />
+    <Content Include="bin\ImagePhone\SsGalaxyS21.jpg" />
+    <Content Include="bin\ImagePhone\SsGalaxyS22.jpg" />
+    <Content Include="bin\ImagePhone\SsS20.jpg" />
+    <Content Include="bin\ImagePhone\SsS22ultra.jpg" />
+    <Content Include="bin\ImagePhone\SsZFold4.jpg" />
+    <Content Include="bin\ImagePhone\SsZPlip3.jpg" />
+    <Content Include="bin\ImagePhone\VivoT1X.jpg" />
+    <Content Include="bin\ImagePhone\VivoV27e.jpg" />
+    <Content Include="bin\ImagePhone\VivoY50.jpg" />
+    <Content Include="bin\ImagePhone\VsmartActive3.jpg" />
+    <Content Include="bin\ImagePhone\VsmartAris.jpg" />
+    <Content Include="bin\ImagePhone\VsmartJoy4.jpg" />
+    <Content Include="bin\ImagePhone\VsmartLive.jpg" />
+    <Content Include="bin\ImagePhone\VsmartStar5.jpg" />
+    <Content Include="bin\ImagePhone\Xiaomi12pro.jpg" />
+    <Content Include="bin\ImagePhone\Xiaomi14.jpg" />
+    <Content Include="bin\ImagePhone\XiaomiMi11.jpg" />
+    <Content Include="bin\ImagePhone\XiaomiNote10.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
