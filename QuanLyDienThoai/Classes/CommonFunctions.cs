@@ -15,6 +15,7 @@ namespace QuanLyDienThoai.Classes
             cb.DataSource = dt;
             cb.DisplayMember = dis;
             cb.ValueMember = value;
+            cb.SelectedIndex = -1;
         }
         public string SinhMa(string TenBang, string MaBatDau, string TruongMa)
         {

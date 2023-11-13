@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnDangXuat = new System.Windows.Forms.Button();
             this.btnThongKe = new System.Windows.Forms.Button();
             this.btnKhoHang = new System.Windows.Forms.Button();
             this.btnDonHang = new System.Windows.Forms.Button();
@@ -37,8 +38,13 @@
             this.btnTrangchu = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.lblChucVu = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             this.SuspendLayout();
@@ -46,6 +52,8 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.button1);
+            this.panelMenu.Controls.Add(this.btnDangXuat);
             this.panelMenu.Controls.Add(this.btnThongKe);
             this.panelMenu.Controls.Add(this.btnKhoHang);
             this.panelMenu.Controls.Add(this.btnDonHang);
@@ -56,8 +64,22 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 562);
+            this.panelMenu.Size = new System.Drawing.Size(124, 576);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnDangXuat.FlatAppearance.BorderSize = 0;
+            this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
+            this.btnDangXuat.Location = new System.Drawing.Point(0, 531);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(124, 45);
+            this.btnDangXuat.TabIndex = 7;
+            this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.UseVisualStyleBackColor = true;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // btnThongKe
             // 
@@ -67,7 +89,7 @@
             this.btnThongKe.ForeColor = System.Drawing.Color.White;
             this.btnThongKe.Location = new System.Drawing.Point(0, 281);
             this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(200, 45);
+            this.btnThongKe.Size = new System.Drawing.Size(124, 45);
             this.btnThongKe.TabIndex = 6;
             this.btnThongKe.Text = "Thống kê";
             this.btnThongKe.UseVisualStyleBackColor = true;
@@ -81,7 +103,7 @@
             this.btnKhoHang.ForeColor = System.Drawing.Color.White;
             this.btnKhoHang.Location = new System.Drawing.Point(0, 236);
             this.btnKhoHang.Name = "btnKhoHang";
-            this.btnKhoHang.Size = new System.Drawing.Size(200, 45);
+            this.btnKhoHang.Size = new System.Drawing.Size(124, 45);
             this.btnKhoHang.TabIndex = 5;
             this.btnKhoHang.Text = "Kho hàng";
             this.btnKhoHang.UseVisualStyleBackColor = true;
@@ -95,7 +117,7 @@
             this.btnDonHang.ForeColor = System.Drawing.Color.White;
             this.btnDonHang.Location = new System.Drawing.Point(0, 191);
             this.btnDonHang.Name = "btnDonHang";
-            this.btnDonHang.Size = new System.Drawing.Size(200, 45);
+            this.btnDonHang.Size = new System.Drawing.Size(124, 45);
             this.btnDonHang.TabIndex = 4;
             this.btnDonHang.Text = "Đơn hàng";
             this.btnDonHang.UseVisualStyleBackColor = true;
@@ -109,7 +131,7 @@
             this.btnNhacc.ForeColor = System.Drawing.Color.White;
             this.btnNhacc.Location = new System.Drawing.Point(0, 146);
             this.btnNhacc.Name = "btnNhacc";
-            this.btnNhacc.Size = new System.Drawing.Size(200, 45);
+            this.btnNhacc.Size = new System.Drawing.Size(124, 45);
             this.btnNhacc.TabIndex = 3;
             this.btnNhacc.Text = "Nhà cung cấp";
             this.btnNhacc.UseVisualStyleBackColor = true;
@@ -123,7 +145,7 @@
             this.btnSanPham.ForeColor = System.Drawing.Color.White;
             this.btnSanPham.Location = new System.Drawing.Point(0, 101);
             this.btnSanPham.Name = "btnSanPham";
-            this.btnSanPham.Size = new System.Drawing.Size(200, 45);
+            this.btnSanPham.Size = new System.Drawing.Size(124, 45);
             this.btnSanPham.TabIndex = 2;
             this.btnSanPham.Text = "Sản phẩm";
             this.btnSanPham.UseVisualStyleBackColor = true;
@@ -137,7 +159,7 @@
             this.btnTrangchu.ForeColor = System.Drawing.Color.White;
             this.btnTrangchu.Location = new System.Drawing.Point(0, 56);
             this.btnTrangchu.Name = "btnTrangchu";
-            this.btnTrangchu.Size = new System.Drawing.Size(200, 45);
+            this.btnTrangchu.Size = new System.Drawing.Size(124, 45);
             this.btnTrangchu.TabIndex = 1;
             this.btnTrangchu.Text = "Trang chủ";
             this.btnTrangchu.UseVisualStyleBackColor = true;
@@ -149,19 +171,62 @@
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(200, 56);
+            this.panelLogo.Size = new System.Drawing.Size(124, 56);
             this.panelLogo.TabIndex = 0;
             // 
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.panelTitleBar.Controls.Add(this.lblChucVu);
+            this.panelTitleBar.Controls.Add(this.label3);
+            this.panelTitleBar.Controls.Add(this.lblUsername);
+            this.panelTitleBar.Controls.Add(this.label1);
             this.panelTitleBar.Controls.Add(this.lblTitle);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleBar.Location = new System.Drawing.Point(200, 0);
+            this.panelTitleBar.Location = new System.Drawing.Point(124, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(747, 56);
+            this.panelTitleBar.Size = new System.Drawing.Size(958, 56);
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTitleBar_Paint);
+            // 
+            // lblChucVu
+            // 
+            this.lblChucVu.AutoSize = true;
+            this.lblChucVu.ForeColor = System.Drawing.Color.White;
+            this.lblChucVu.Location = new System.Drawing.Point(721, 20);
+            this.lblChucVu.Name = "lblChucVu";
+            this.lblChucVu.Size = new System.Drawing.Size(57, 16);
+            this.lblChucVu.TabIndex = 1;
+            this.lblChucVu.Text = "Chức vụ:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(658, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 16);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Chức vụ:";
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.ForeColor = System.Drawing.Color.White;
+            this.lblUsername.Location = new System.Drawing.Point(92, 20);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(0, 16);
+            this.lblUsername.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(25, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 16);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Xin chào:";
             // 
             // lblTitle
             // 
@@ -169,7 +234,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTitle.Location = new System.Drawing.Point(279, 20);
+            this.lblTitle.Location = new System.Drawing.Point(385, 20);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(81, 29);
             this.lblTitle.TabIndex = 0;
@@ -178,21 +243,38 @@
             // panelDesktop
             // 
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(200, 56);
+            this.panelDesktop.Location = new System.Drawing.Point(124, 56);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(747, 506);
+            this.panelDesktop.Size = new System.Drawing.Size(958, 520);
             this.panelDesktop.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(0, 326);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(124, 45);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Thống kê doanh thu";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(947, 562);
+            this.ClientSize = new System.Drawing.Size(1082, 576);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.Name = "frmMainMenu";
             this.Text = "frmMainMenu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMainMenu_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMainMenu_FormClosed);
+            this.Load += new System.EventHandler(this.frmMainMenu_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
@@ -205,7 +287,6 @@
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Button btnTrangchu;
         private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.Button btnThongKe;
         private System.Windows.Forms.Button btnKhoHang;
         private System.Windows.Forms.Button btnDonHang;
         private System.Windows.Forms.Button btnNhacc;
@@ -213,5 +294,12 @@
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel panelDesktop;
+        private System.Windows.Forms.Button btnDangXuat;
+        private System.Windows.Forms.Button btnThongKe;
+        private System.Windows.Forms.Label lblChucVu;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

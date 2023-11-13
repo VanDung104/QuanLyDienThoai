@@ -33,8 +33,28 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,6 +68,12 @@
   <ItemGroup>
     <Compile Include="Classes\CommonFunctions.cs" />
     <Compile Include="Classes\DataProcess.cs" />
+    <Compile Include="Forms\ChiTietSP_DH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChiTietSP_DH.Designer.cs">
+      <DependentUpon>ChiTietSP_DH.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,23 +92,41 @@
     <Compile Include="Forms\frmNhaCungCap.Designer.cs">
       <DependentUpon>frmNhaCungCap.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmPrintHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPrintHD.Designer.cs">
+      <DependentUpon>frmPrintHD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmSanPham.Designer.cs">
       <DependentUpon>frmSanPham.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmThongKe.cs">
+    <Compile Include="Forms\Test.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmThongKe.Designer.cs">
-      <DependentUpon>frmThongKe.cs</DependentUpon>
+    <Compile Include="Forms\Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmTimKiemHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTimKiemHoaDon.Designer.cs">
+      <DependentUpon>frmTimKiemHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmTrangchu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmTrangchu.Designer.cs">
       <DependentUpon>frmTrangchu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ThongKeDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ThongKeDoanhThu.Designer.cs">
+      <DependentUpon>ThongKeDoanhThu.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
@@ -104,6 +148,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Forms\ChiTietSP_DH.resx">
+      <DependentUpon>ChiTietSP_DH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmDonHang.resx">
       <DependentUpon>frmDonHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,14 +161,23 @@
     <EmbeddedResource Include="Forms\frmNhaCungCap.resx">
       <DependentUpon>frmNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPrintHD.resx">
+      <DependentUpon>frmPrintHD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSanPham.resx">
       <DependentUpon>frmSanPham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmThongKe.resx">
-      <DependentUpon>frmThongKe.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTimKiemHoaDon.resx">
+      <DependentUpon>frmTimKiemHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmTrangchu.resx">
       <DependentUpon>frmTrangchu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ThongKeDoanhThu.resx">
+      <DependentUpon>ThongKeDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
@@ -139,7 +196,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -153,8 +212,124 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="bin\Debug\" />
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\ImagePhone\f1.jpg" />
+    <Content Include="bin\Debug\ImagePhone\f2.jpg" />
+    <Content Include="bin\Debug\ImagePhone\f3.jpg" />
+    <Content Include="bin\Debug\ImagePhone\f4.jpg" />
+    <Content Include="bin\Debug\ImagePhone\f5.jpg" />
+    <Content Include="bin\Debug\ImagePhone\f6.jpg" />
+    <Content Include="bin\Debug\ImagePhone\f7.jpg" />
+    <Content Include="bin\Debug\ImagePhone\f8.jpg" />
+    <Content Include="bin\Debug\ImagePhone\f9.jpg" />
+    <Content Include="bin\Debug\ImagePhone\HuaweiMate60.jpg" />
+    <Content Include="bin\Debug\ImagePhone\HuaweiP50.jpg" />
+    <Content Include="bin\Debug\ImagePhone\Ip11.jpg" />
+    <Content Include="bin\Debug\ImagePhone\Ip12.jpg" />
+    <Content Include="bin\Debug\ImagePhone\Ip13.jpg" />
+    <Content Include="bin\Debug\ImagePhone\Ip14.jpg" />
+    <Content Include="bin\Debug\ImagePhone\Ip14plus.jpg" />
+    <Content Include="bin\Debug\ImagePhone\Ip14prm.jpg" />
+    <Content Include="bin\Debug\ImagePhone\Ip15pro.jpg" />
+    <Content Include="bin\Debug\ImagePhone\Ip6.jpg" />
+    <Content Include="bin\Debug\ImagePhone\Ip7.jpg" />
+    <Content Include="bin\Debug\ImagePhone\Ip8.jpg" />
+    <Content Include="bin\Debug\ImagePhone\IpSE.jpeg" />
+    <Content Include="bin\Debug\ImagePhone\IpX.jpg" />
+    <Content Include="bin\Debug\ImagePhone\IpXr.jpg" />
+    <Content Include="bin\Debug\ImagePhone\LenovoK10.jpg" />
+    <Content Include="bin\Debug\ImagePhone\LenovoZ5s.jpg" />
+    <Content Include="bin\Debug\ImagePhone\n1.jpg" />
+    <Content Include="bin\Debug\ImagePhone\n2.jpg" />
+    <Content Include="bin\Debug\ImagePhone\n3.jpg" />
+    <Content Include="bin\Debug\ImagePhone\n4.jpg" />
+    <Content Include="bin\Debug\ImagePhone\n5.jpg" />
+    <Content Include="bin\Debug\ImagePhone\n6.jpg" />
+    <Content Include="bin\Debug\ImagePhone\n7.jpg" />
+    <Content Include="bin\Debug\ImagePhone\n8.jpg" />
+    <Content Include="bin\Debug\ImagePhone\Oppo5.jpg" />
+    <Content Include="bin\Debug\ImagePhone\OppoA5s.jpg" />
+    <Content Include="bin\Debug\ImagePhone\OppoA92.jpg" />
+    <Content Include="bin\Debug\ImagePhone\OppoF11.jpg" />
+    <Content Include="bin\Debug\ImagePhone\OppoF9.jpg" />
+    <Content Include="bin\Debug\ImagePhone\OppoReno5.jpg" />
+    <Content Include="bin\Debug\ImagePhone\Realme5i.jpg" />
+    <Content Include="bin\Debug\ImagePhone\Realme6.jpg" />
+    <Content Include="bin\Debug\ImagePhone\RealmeC3.jpg" />
+    <Content Include="bin\Debug\ImagePhone\RealmeC51.jpg" />
+    <Content Include="bin\Debug\ImagePhone\SonyXperia5.jpg" />
+    <Content Include="bin\Debug\ImagePhone\SsA12.jpg" />
+    <Content Include="bin\Debug\ImagePhone\SsA53.jpg" />
+    <Content Include="bin\Debug\ImagePhone\SsA71.jpg" />
+    <Content Include="bin\Debug\ImagePhone\SsGalaxyJ6.jpg" />
+    <Content Include="bin\Debug\ImagePhone\SsGalaxyS21.jpg" />
+    <Content Include="bin\Debug\ImagePhone\SsGalaxyS22.jpg" />
+    <Content Include="bin\Debug\ImagePhone\SsS20.jpg" />
+    <Content Include="bin\Debug\ImagePhone\SsS22ultra.jpg" />
+    <Content Include="bin\Debug\ImagePhone\SsZFold4.jpg" />
+    <Content Include="bin\Debug\ImagePhone\SsZPlip3.jpg" />
+    <Content Include="bin\Debug\ImagePhone\VivoT1X.jpg" />
+    <Content Include="bin\Debug\ImagePhone\VivoV27e.jpg" />
+    <Content Include="bin\Debug\ImagePhone\VivoY50.jpg" />
+    <Content Include="bin\Debug\ImagePhone\VsmartActive3.jpg" />
+    <Content Include="bin\Debug\ImagePhone\VsmartAris.jpg" />
+    <Content Include="bin\Debug\ImagePhone\VsmartJoy4.jpg" />
+    <Content Include="bin\Debug\ImagePhone\VsmartLive.jpg" />
+    <Content Include="bin\Debug\ImagePhone\VsmartStar5.jpg" />
+    <Content Include="bin\Debug\ImagePhone\Xiaomi12pro.jpg" />
+    <Content Include="bin\Debug\ImagePhone\Xiaomi14.jpg" />
+    <Content Include="bin\Debug\ImagePhone\XiaomiMi11.jpg" />
+    <Content Include="bin\Debug\ImagePhone\XiaomiNote10.jpg" />
+    <None Include="Resources\logo3.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\padlock.png" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\employees.png" />
+    <None Include="Resources\plus1.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

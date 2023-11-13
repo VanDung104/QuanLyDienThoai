@@ -29,12 +29,6 @@ namespace QuanLyDienThoai
 
         }
 
-        private void btnDangNhap_Click(object sender, EventArgs e)
-        {
-            
-
-        }
-
         private void txtMatKhau_TextChanged(object sender, EventArgs e)
         {
 
@@ -47,7 +41,6 @@ namespace QuanLyDienThoai
 
         private void btnDangNhap_Click_1(object sender, EventArgs e)
         {
-            frmMenu.userName = txtTenDangNhap.Text;
             string sql = "select * from TAIKHOAN";
             if (txtTenDangNhap.Text.Trim() != "")
             {
@@ -60,8 +53,9 @@ namespace QuanLyDienThoai
             DataTable tai_khoan = dtbase.DataReader(sql);
             if (tai_khoan.Rows.Count > 0 && tai_khoan.Rows[0]["MatKhau"].ToString() == txtMatKhau.Text)
             {
-                frmMenu.quyen = tai_khoan.Rows[0]["Quyen"].ToString();  
-                frmMenu f = new frmMenu();
+                frmMainMenu.userName = tai_khoan.Rows[0]["TenDN"].ToString();
+                frmMainMenu.quyen = tai_khoan.Rows[0]["Quyen"].ToString();
+                frmMainMenu f = new frmMainMenu();
                 f.Show();
                 this.Hide();
                 f.Logout += F_Logout;
@@ -78,8 +72,8 @@ namespace QuanLyDienThoai
 
         private void F_Logout(object sender, EventArgs e)
         {
-            (sender as frmMenu).isExit = false;
-            (sender as frmMenu).Close();
+            (sender as frmMainMenu).isExit = false;
+            (sender as frmMainMenu).Close();
             this.Show();
         }
 
@@ -91,6 +85,11 @@ namespace QuanLyDienThoai
         private void frmDangNhap_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
