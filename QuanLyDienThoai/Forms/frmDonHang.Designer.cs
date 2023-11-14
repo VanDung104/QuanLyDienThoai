@@ -38,6 +38,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.btnXoaSP = new System.Windows.Forms.Button();
+            this.btnThemSP = new System.Windows.Forms.Button();
             this.txtSLmua = new System.Windows.Forms.TextBox();
             this.txtSLcon = new System.Windows.Forms.TextBox();
             this.txtTenHH = new System.Windows.Forms.TextBox();
@@ -47,6 +48,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtTenKH = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.cboMaKH = new System.Windows.Forms.ComboBox();
@@ -77,16 +79,14 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvHangHoa = new System.Windows.Forms.DataGridView();
             this.errCheck = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnThemSP = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errCheck)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -203,6 +203,18 @@
             this.btnXoaSP.UseVisualStyleBackColor = false;
             this.btnXoaSP.Click += new System.EventHandler(this.btnXoaSP_Click);
             // 
+            // btnThemSP
+            // 
+            this.btnThemSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(151)))), ((int)(((byte)(84)))));
+            this.btnThemSP.Location = new System.Drawing.Point(10, 151);
+            this.btnThemSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThemSP.Name = "btnThemSP";
+            this.btnThemSP.Size = new System.Drawing.Size(86, 55);
+            this.btnThemSP.TabIndex = 4;
+            this.btnThemSP.Text = "Thêm sản phẩm";
+            this.btnThemSP.UseVisualStyleBackColor = false;
+            this.btnThemSP.Click += new System.EventHandler(this.btnThemSP_Click);
+            // 
             // txtSLmua
             // 
             this.txtSLmua.Location = new System.Drawing.Point(9, 107);
@@ -308,6 +320,16 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin khách hàng";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::QuanLyDienThoai.Properties.Resources.employees;
+            this.pictureBox1.Location = new System.Drawing.Point(266, 161);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(29, 33);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
             // 
             // txtTenKH
             // 
@@ -479,7 +501,7 @@
             // 
             this.button3.Location = new System.Drawing.Point(709, 7);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(72, 26);
+            this.button3.Size = new System.Drawing.Size(77, 25);
             this.button3.TabIndex = 8;
             this.button3.Text = "Tìm kiếm";
             this.button3.UseVisualStyleBackColor = true;
@@ -488,7 +510,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(396, 12);
+            this.label16.Location = new System.Drawing.Point(396, 13);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(78, 16);
             this.label16.TabIndex = 7;
@@ -499,7 +521,7 @@
             this.btnTim.Location = new System.Drawing.Point(590, 8);
             this.btnTim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(113, 24);
+            this.btnTim.Size = new System.Drawing.Size(101, 24);
             this.btnTim.TabIndex = 6;
             this.btnTim.Text = "Xem hóa đơn";
             this.btnTim.UseVisualStyleBackColor = true;
@@ -608,28 +630,6 @@
             // 
             this.errCheck.ContainerControl = this;
             // 
-            // btnThemSP
-            // 
-            this.btnThemSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(151)))), ((int)(((byte)(84)))));
-            this.btnThemSP.Location = new System.Drawing.Point(10, 151);
-            this.btnThemSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnThemSP.Name = "btnThemSP";
-            this.btnThemSP.Size = new System.Drawing.Size(86, 55);
-            this.btnThemSP.TabIndex = 4;
-            this.btnThemSP.Text = "Thêm sản phẩm";
-            this.btnThemSP.UseVisualStyleBackColor = false;
-            this.btnThemSP.Click += new System.EventHandler(this.btnThemSP_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::QuanLyDienThoai.Properties.Resources.employees;
-            this.pictureBox1.Location = new System.Drawing.Point(266, 161);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(29, 33);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            // 
             // frmDonHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -647,12 +647,12 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errCheck)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

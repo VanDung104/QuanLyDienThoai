@@ -74,8 +74,13 @@ namespace QuanLyDienThoai
 
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
-            lblChucVu.Text = quyen;
-            lblUsername.Text = userName;
+            lblChucVu.Text = quyen == "User" ? "Nhân viên" : "Quản lý";
+            lblUsername.Text = userName ;
+            if(quyen == "User")
+            {
+                button2.Visible = false;
+                button1.Visible = false;
+            }
         }
 
         private void frmMainMenu_FormClosing(object sender, FormClosingEventArgs e)
@@ -100,6 +105,11 @@ namespace QuanLyDienThoai
         private void button1_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.ThongKeDoanhThu(), sender);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FrmQuanLiNhanVien(), sender);
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)
