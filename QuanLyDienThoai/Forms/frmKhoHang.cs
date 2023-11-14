@@ -23,7 +23,12 @@ namespace QuanLyDienThoai.Forms
         {
             btnXoaSanPham.Enabled = false;
             dgvSanPhamKho.DataSource = db.DataReader("select HANGHOA.MaHH,HANGHOA.TenHH, HANGHOA.Hang,HANGHOA.GiaBan,HANGHOA.So_Luong from HANGHOA");
-        }
+			dgvSanPhamKho.Columns[0].HeaderText = "Mã hàng";
+			dgvSanPhamKho.Columns[1].HeaderText = "Tên hàng";
+			dgvSanPhamKho.Columns[2].HeaderText = "Hãng";
+			dgvSanPhamKho.Columns[3].HeaderText = "Giá";
+			dgvSanPhamKho.Columns[4].HeaderText = "Số Lượng";
+		}
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -51,7 +56,6 @@ namespace QuanLyDienThoai.Forms
             }
             btnIn.Enabled = true;
             btnNhapHang.Enabled = true;
-            txtTimKiem.Text = "";
         }
 
         private void btnIn_Click(object sender, EventArgs e)
@@ -157,11 +161,6 @@ namespace QuanLyDienThoai.Forms
         {
             btnTimKiem.Enabled = true;
             btnXoaSanPham.Enabled = false;
-        }
-
-        private void dgvSanPhamKho_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

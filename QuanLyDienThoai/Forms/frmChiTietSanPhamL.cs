@@ -20,13 +20,16 @@ namespace QuanLyDienThoai.Forms
 
         private void frmChiTietSanPhamL_Load(object sender, EventArgs e)
         {
-            txtBoNho.Text = bonho;
-            txtTenHH.Text = txtTenHH1.Text = tendt;
-            txtDacDiem.Text = dacdiem;
-            txtGiaBan.Text = giathanh;
-            txtLoai.Text = loai;
-            txtHang.Text = hangsx;
-            picbAnh.Image = Image.FromFile(anh);
+            try
+            {
+                txtBoNho.Text = bonho;
+                txtTenHH.Text = txtTenHH1.Text = tendt;
+                txtDacDiem.Text = dacdiem;
+                txtGiaBan.Text = giathanh;
+                txtLoai.Text = loai;
+                txtHang.Text = hangsx;
+                picbAnh.Image = Image.FromFile("ImagePhone\\" + anh);
+            } catch { }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using QuanLyDienThoai.Classes;
+﻿using Microsoft.Office.Interop.Excel;
+using QuanLyDienThoai.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,16 +18,15 @@ namespace QuanLyDienThoai.Forms
     {
         DataBaseProcess db = new DataBaseProcess();
         Functions ft = new Functions();
-        public frmNhapHang()
+		string maHH;
+		int slcon;
+		int kt = 0;
+		string strAnh;
+		public frmNhapHang()
         {
             InitializeComponent();
         }
-        string maHH;
-        int slcon;
-        int kt = 0;
-        string fileNameImg;
-        string fileNameImg1;
-        private void dgvNhapHang_Click(object sender, EventArgs e)
+		private void dgvNhapHang_Click(object sender, EventArgs e)
         {
             try
             {
@@ -34,7 +34,6 @@ namespace QuanLyDienThoai.Forms
                 maHH = dgvNhapHang.CurrentRow.Cells[0].Value.ToString();
                 string temp = dgvNhapHang.CurrentRow.Cells[5].Value.ToString();
                 slcon = Convert.ToInt32(temp);
-                btnThemHangMoi.Enabled = false;
                 btnNhap.Enabled = true;
                 btnLuu.Enabled = true;
                 txtSL.Enabled = true;
@@ -45,9 +44,10 @@ namespace QuanLyDienThoai.Forms
                 cbmHang.SelectedItem = dgvNhapHang.CurrentRow.Cells[3].Value.ToString();
                 cbmBoNho.SelectedItem = dgvNhapHang.CurrentRow.Cells[4].Value.ToString();
                 txtSLM.Text = dgvNhapHang.CurrentRow.Cells[5].Value.ToString();
-                picbAnh.Image = Image.FromFile(dgvNhapHang.CurrentRow.Cells[6].Value.ToString());
-                fileNameImg1 = dgvNhapHang.CurrentRow.Cells[6].Value.ToString();
-                btnLuu.Enabled = false;
+                picAnh.Image = Image.FromFile("ImagePhone\\"+dgvNhapHang.CurrentRow.Cells[6].Value.ToString());
+				strAnh = dgvNhapHang.CurrentRow.Cells[6].Value.ToString();
+				cmbLoai.SelectedItem = dgvNhapHang.CurrentRow.Cells[7].Value.ToString();
+                txtDacDiem.Text = dgvNhapHang.CurrentRow.Cells[8].Value.ToString();
                 kt = 2;
             }
             catch (Exception ex)
@@ -68,7 +68,7 @@ namespace QuanLyDienThoai.Forms
             {
                 int slmoi = Convert.ToInt32(txtSL.Text);
                 db.DataChange("update HANGHOA set So_Luong= " + (slcon + slmoi) + "where MaHH = '" + maHH + "'");
-                dgvNhapHang.DataSource = db.DataReader("select HANGHOA.MaHH,HANGHOA.TenHH, HANGHOA.Hang,HANGHOA.GiaBan,HANGHOA.So_Luong from HANGHOA");
+                dgvNhapHang.DataSource = db.DataReader("select MaHH, TenHH, GiaBan, Hang, Bo_nho, So_luong, Anh, Loai, DacDiem from HANGHOA");
                 btnThemHangMoi.Enabled = true;
                 MessageBox.Show("Bạn đã nhập hàng thành công!", "Thông báo",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -85,26 +85,32 @@ namespace QuanLyDienThoai.Forms
             txtSLM.Text = "";
             txtGiaBan.Text = "";
             cbmBoNho.SelectedItem = null;
-            picbAnh.Image = null;
+            picAnh.Image = null;
+            txtDacDiem.Text = "";
+            cmbLoai.SelectedItem = null;
         }
         private void frmNhapHang_Load(object sender, EventArgs e)
         {
-            btnEdit.Enabled = false;
-            btnLuu.Enabled = false;
-            grbChiTietNhap.Enabled = false;
-            txtSL.Enabled = false;
-            btnNhap.Enabled = false;
-            dgvNhapHang.DataSource = db.DataReader("select MaHH, TenHH, GiaBan, Hang, Bo_nho, So_luong, Anh from HANGHOA");
-        }
+            dgvNhapHang.DataSource = db.DataReader("select MaHH, TenHH, GiaBan, Hang, Bo_nho, So_luong, Anh, Loai, DacDiem from HANGHOA");
+			dgvNhapHang.Columns[0].HeaderText = "Mã hàng";
+			dgvNhapHang.Columns[1].HeaderText = "Tên hàng";
+			dgvNhapHang.Columns[2].HeaderText = "Giá Bán";
+			dgvNhapHang.Columns[3].HeaderText = "Hãng";
+			dgvNhapHang.Columns[4].HeaderText = "Bộ Nhớ";
+			dgvNhapHang.Columns[5].HeaderText = "Số Lượng";
+			dgvNhapHang.Columns[6].HeaderText = "File ảnh";
+			dgvNhapHang.Columns[7].HeaderText = "Loại";
+			dgvNhapHang.Columns[8].HeaderText = "Đặc Điểm";
+		}
 
         private void btnThemHangMoi_Click(object sender, EventArgs e)
         {
             ResetValue();
-            btnLuu.Enabled = true;
             btnNhap.Enabled = false;
             grbChiTietNhap.Enabled = true;
             string str = "HH" + DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString();
             txtMaHH.Text = ft.SinhMaTuDong("HANGHOA", str, "MaHH");
+            btnEdit.Enabled = false;
             kt = 1;
         }
 
@@ -112,7 +118,7 @@ namespace QuanLyDienThoai.Forms
         {
             try
             {
-                if (kt == 1)
+				if (kt == 1)
                 {
                     if (string.IsNullOrEmpty(cbmBoNho.SelectedItem?.ToString()) || string.IsNullOrEmpty(txtSLM.Text))
                     {
@@ -120,10 +126,9 @@ namespace QuanLyDienThoai.Forms
                     }
                     else
                     {
-                        string bonho = cbmBoNho.SelectedItem.ToString();
                         int sl = Convert.ToInt32(txtSLM.Text);
-                        db.DataChange("insert into hanghoa (MaHH, TenHH, GiaBan, Hang, Bo_nho, So_luong, Anh)values('" + txtMaHH.Text + "','" + txtTenHang.Text + "','" + txtGiaBan.Text + "','" + cbmHang.SelectedItem.ToString() + "','" + bonho + "'," + sl + ",'" + fileNameImg + "')");
-                        dgvNhapHang.DataSource = db.DataReader("select MaHH, TenHH, GiaBan, Hang, Bo_nho, So_luong, Anh from HANGHOA");
+                        db.DataChange("insert into hanghoa (MaHH, TenHH, GiaBan, Hang, Bo_nho, So_luong, Anh, DacDiem, Loai)values('" + txtMaHH.Text + "','" + txtTenHang.Text + "','" + txtGiaBan.Text + "','" + cbmHang.SelectedItem.ToString() + "','" + cbmBoNho.SelectedItem.ToString() + "'," + sl + ",'" + strAnh +"', N'"+txtDacDiem.Text + "',N'" + cmbLoai.SelectedItem.ToString() + "')");
+                        dgvNhapHang.DataSource = db.DataReader("select MaHH, TenHH, GiaBan, Hang, Bo_nho, So_luong, Anh, Loai, DacDiem from HANGHOA");
                         kt = 0;
                         ResetValue();
                     }
@@ -131,8 +136,8 @@ namespace QuanLyDienThoai.Forms
                 else if (kt == 2)
                 {
                     string bonho = cbmBoNho.SelectedItem.ToString();
-                    db.DataChange("update HANGHOA set TenHH = '" + txtTenHang.Text + "', GiaBan = '" + txtGiaBan.Text + "', Hang = '" + cbmHang.SelectedItem.ToString() + "', Bo_nho = '" + bonho + "', So_luong = " + Convert.ToInt32(txtSLM.Text) + ", Anh = '" + fileNameImg1 + "' where maHH ='" + txtMaHH.Text + "'");
-                    dgvNhapHang.DataSource = db.DataReader("select MaHH, TenHH, GiaBan, Hang, Bo_nho, So_luong, Anh from HANGHOA");
+                    db.DataChange("update HANGHOA set TenHH = '" + txtTenHang.Text + "', GiaBan = '" + txtGiaBan.Text + "', Hang = '" + cbmHang.SelectedItem.ToString() + "', Bo_nho = '" + bonho + "', So_luong = " + Convert.ToInt32(txtSLM.Text) + ", Anh = '" + strAnh + "',DacDiem= N'" + txtDacDiem.Text + "', Loai = N'" + cmbLoai.SelectedItem.ToString() + "' where maHH ='" + txtMaHH.Text + "'");
+                    dgvNhapHang.DataSource = db.DataReader("select MaHH, TenHH, GiaBan, Hang, Bo_nho, So_luong, Anh, Loai, DacDiem from HANGHOA");
                     kt = 0;
                     ResetValue();
                 }
@@ -141,24 +146,23 @@ namespace QuanLyDienThoai.Forms
                 MessageBox.Show("lỗi "+ex.Message.ToString(),"lỗi");
             }
         }
-        private void updateImg()
-        {
-            try
-            {
-                openFileDialog1.Filter = "JPG FILES (*.jpg)|*.jpg| PNG FILES(*.png)|*.png";
-                if (openFileDialog1.ShowDialog() == DialogResult.OK)
-                    picbAnh.Image = Image.FromFile(openFileDialog1.FileName);
-                fileNameImg = openFileDialog1.FileName;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("lỗi chọn ảnh. \n" + ex.ToString(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
         private void btnAnh_Click(object sender, EventArgs e)
         {
-            updateImg();
-        }
+			dlgAnh.Filter = "Bitmap(*.bmp)|*.bmp|Gif(*.gif) |*.gif|All files(*.*)|*.*";
+			dlgAnh.InitialDirectory = "D:\\workspace\\github\\QuanLyDienThoai\\QuanLyDienThoai\\bin\\Debug\\ImagePhone";
+			dlgAnh.FilterIndex = 3;
+			dlgAnh.Title = "Chọn ảnh để hiển thị";
+			if (dlgAnh.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+			{
+				picAnh.Image = Image.FromFile(dlgAnh.FileName);
+				string[] str = dlgAnh.FileName.Split('\\');
+				strAnh = str[str.Length - 1].ToString();
+
+			}
+			else
+				MessageBox.Show("You clicked Cancel", "Open Dialog",
+								 MessageBoxButtons.OK, MessageBoxIcon.Information);
+		}
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
@@ -167,5 +171,6 @@ namespace QuanLyDienThoai.Forms
             btnLuu.Enabled = true;
             btnNhap.Enabled = false;
         }
-    }
+
+	}
 }

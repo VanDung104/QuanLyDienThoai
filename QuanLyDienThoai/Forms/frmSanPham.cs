@@ -22,8 +22,15 @@ namespace QuanLyDienThoai.Forms
         private void frmSanPham_Load(object sender, EventArgs e)
         {
             dgvSanPham.DataSource = db.DataReader("select TenHH, Bo_nho, Hang, GiaBan, Loai, Anh, DacDiem from HANGHOA");
+			dgvSanPham.Columns[0].HeaderText = "Mã hàng";
+			dgvSanPham.Columns[1].HeaderText = "Bộ nhớ";
+			dgvSanPham.Columns[2].HeaderText = "Hãng";
+			dgvSanPham.Columns[3].HeaderText = "Giá";
+			dgvSanPham.Columns[4].HeaderText = "Loại";
+			dgvSanPham.Columns[5].HeaderText = "File Ảnh";
+			dgvSanPham.Columns[6].HeaderText = "Đặc Điểm";
 
-        }
+		}
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
@@ -33,7 +40,7 @@ namespace QuanLyDienThoai.Forms
             }
             else
             {
-                dgvSanPham.DataSource = db.DataReader("select HANGHOA.MaHH,HANGHOA.TenHH, HANGHOA.Hang,HANGHOA.GiaBan,HANGHOA.So_Luong from HANGHOA where TenHH like '%" + txtLocTheoTen.Text + "%'");
+                dgvSanPham.DataSource = db.DataReader("select TenHH, Bo_nho, Hang, GiaBan, Loai, Anh, DacDiem from HANGHOA where TenHH like '%" + txtLocTheoTen.Text + "%'");
             }
         }
         private void btnLocGia_Click(object sender, EventArgs e)
@@ -50,16 +57,16 @@ namespace QuanLyDienThoai.Forms
                     switch (ktloc)
                     {
                         case "0<=2.500.000":
-                            dgvSanPham.DataSource = db.DataReader("select HANGHOA.MaHH,HANGHOA.TenHH, HANGHOA.Hang,HANGHOA.GiaBan,HANGHOA.So_Luong from HANGHOA where GiaBan between 0 and 2500000");
+                            dgvSanPham.DataSource = db.DataReader("select TenHH, Bo_nho, Hang, GiaBan, Loai, Anh, DacDiem from HANGHOA where GiaBan between 0 and 2500000");
                             break;
                         case "2.500.000<=5.000.000":
-                            dgvSanPham.DataSource = db.DataReader("select HANGHOA.MaHH,HANGHOA.TenHH, HANGHOA.Hang,HANGHOA.GiaBan,HANGHOA.So_Luong from HANGHOA where GiaBan between 2500000 and 5000000");
+                            dgvSanPham.DataSource = db.DataReader("select TenHH, Bo_nho, Hang, GiaBan, Loai, Anh, DacDiem from HANGHOA where GiaBan between 2500000 and 5000000");
                             break;
                         case "5.000.000<=10.000.000":
-                            dgvSanPham.DataSource = db.DataReader("select HANGHOA.MaHH,HANGHOA.TenHH, HANGHOA.Hang,HANGHOA.GiaBan,HANGHOA.So_Luong from HANGHOA where GiaBan between 5000000 and 10000000");
+                            dgvSanPham.DataSource = db.DataReader("select TenHH, Bo_nho, Hang, GiaBan, Loai, Anh, DacDiem from HANGHOA where GiaBan between 5000000 and 10000000");
                             break;
                         case ">10.000.000":
-                            dgvSanPham.DataSource = db.DataReader("select HANGHOA.MaHH,HANGHOA.TenHH, HANGHOA.Hang,HANGHOA.GiaBan,HANGHOA.So_Luong from HANGHOA where GiaBan > 10000000");
+                            dgvSanPham.DataSource = db.DataReader("select TenHH, Bo_nho, Hang, GiaBan, Loai, Anh, DacDiem from HANGHOA where GiaBan > 10000000");
                             break;
                     }
                     cbmLocGia.SelectedItem = null;
@@ -83,19 +90,19 @@ namespace QuanLyDienThoai.Forms
                     switch (ktloc)
                     {
                         case "Apple":
-                            dgvSanPham.DataSource = db.DataReader("select HANGHOA.MaHH,HANGHOA.TenHH, HANGHOA.Hang,HANGHOA.GiaBan,HANGHOA.So_Luong from HANGHOA where Hang='Apple'");
+                            dgvSanPham.DataSource = db.DataReader("select TenHH, Bo_nho, Hang, GiaBan, Loai, Anh, DacDiem from HANGHOA where Hang='Apple'");
                             break;
                         case "Oppo":
-                            dgvSanPham.DataSource = db.DataReader("select HANGHOA.MaHH,HANGHOA.TenHH, HANGHOA.Hang,HANGHOA.GiaBan,HANGHOA.So_Luong from HANGHOA where Hang='Oppo'");
+                            dgvSanPham.DataSource = db.DataReader("select TenHH, Bo_nho, Hang, GiaBan, Loai, Anh, DacDiem from HANGHOA where Hang='Oppo'");
                             break;
                         case "Xiaomi":
-                            dgvSanPham.DataSource = db.DataReader("select HANGHOA.MaHH,HANGHOA.TenHH, HANGHOA.Hang,HANGHOA.GiaBan,HANGHOA.So_Luong from HANGHOA where Hang='Xiaomi'");
+                            dgvSanPham.DataSource = db.DataReader("select TenHH, Bo_nho, Hang, GiaBan, Loai, Anh, DacDiem from HANGHOA where Hang='Xiaomi'");
                             break;
                         case "Sam Sung":
-                            dgvSanPham.DataSource = db.DataReader("select HANGHOA.MaHH,HANGHOA.TenHH, HANGHOA.Hang,HANGHOA.GiaBan,HANGHOA.So_Luong from HANGHOA where Hang='Sam Sung'");
+                            dgvSanPham.DataSource = db.DataReader("select TenHH, Bo_nho, Hang, GiaBan, Loai, Anh, DacDiem from HANGHOA where Hang='Sam Sung'");
                             break;
                         case "Sony":
-                            dgvSanPham.DataSource = db.DataReader("select HANGHOA.MaHH,HANGHOA.TenHH, HANGHOA.Hang,HANGHOA.GiaBan,HANGHOA.So_Luong from HANGHOA where Hang='Sony'");
+                            dgvSanPham.DataSource = db.DataReader("select TenHH, Bo_nho, Hang, GiaBan, Loai, Anh, DacDiem from HANGHOA where Hang='Sony'");
                             break;
                     }
                     cbmLocHang.SelectedItem = null;
@@ -111,20 +118,24 @@ namespace QuanLyDienThoai.Forms
         {
             try
             {
-                frmChiTietSanPhamL frmCT = new frmChiTietSanPhamL();
-                frmCT.tendt = dgvSanPham.CurrentRow.Cells[0].Value.ToString();
-                frmCT.giathanh = dgvSanPham.CurrentRow.Cells[3].Value.ToString();
-                frmCT.hangsx = dgvSanPham.CurrentRow.Cells[2].Value.ToString();
-                frmCT.bonho = dgvSanPham.CurrentRow.Cells[1].Value.ToString();
-                frmCT.anh = dgvSanPham.CurrentRow.Cells[5].Value.ToString();
-                frmCT.loai = dgvSanPham.CurrentRow.Cells[4].Value.ToString();
-                frmCT.dacdiem = dgvSanPham.CurrentRow.Cells[6].Value.ToString();
-                frmCT.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("lỗi " + ex.ToString(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                if (string.IsNullOrEmpty(dgvSanPham.CurrentRow.Cells[0].Value.ToString()))
+                {
+                    MessageBox.Show("Vui Lòng chọn vào sản phẩm!");
+                }
+                else
+                {
+                    frmChiTietSanPhamL frmCT = new frmChiTietSanPhamL();
+                    frmCT.tendt = dgvSanPham.CurrentRow.Cells[0].Value.ToString();
+                    frmCT.giathanh = dgvSanPham.CurrentRow.Cells[3].Value.ToString();
+                    frmCT.hangsx = dgvSanPham.CurrentRow.Cells[2].Value.ToString();
+                    frmCT.bonho = dgvSanPham.CurrentRow.Cells[1].Value.ToString();
+                    frmCT.anh = dgvSanPham.CurrentRow.Cells[5].Value.ToString();
+                    frmCT.loai = dgvSanPham.CurrentRow.Cells[4].Value.ToString();
+                    frmCT.dacdiem = dgvSanPham.CurrentRow.Cells[6].Value.ToString();
+                    frmCT.ShowDialog();
+                }
+            }catch{}
+            
         }
     }
 }
