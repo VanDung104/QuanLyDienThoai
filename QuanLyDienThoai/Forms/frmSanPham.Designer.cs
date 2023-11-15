@@ -33,11 +33,11 @@
 			this.btnLamMoi = new System.Windows.Forms.Button();
 			this.cbmLocHang = new System.Windows.Forms.ComboBox();
 			this.cbmLocGia = new System.Windows.Forms.ComboBox();
+			this.btnTimKiem = new System.Windows.Forms.Button();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.txtLocTheoTen = new System.Windows.Forms.TextBox();
-			this.btnTimKiem = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -118,6 +118,19 @@
 			this.cbmLocGia.TabIndex = 3;
 			this.cbmLocGia.SelectedValueChanged += new System.EventHandler(this.cbmLocGia_SelectedValueChanged);
 			// 
+			// btnTimKiem
+			// 
+			this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnTimKiem.BackColor = System.Drawing.Color.White;
+			this.btnTimKiem.Image = global::QuanLyDienThoai.Properties.Resources.icons8_search__1_;
+			this.btnTimKiem.Location = new System.Drawing.Point(339, 6);
+			this.btnTimKiem.Name = "btnTimKiem";
+			this.btnTimKiem.Size = new System.Drawing.Size(48, 44);
+			this.btnTimKiem.TabIndex = 2;
+			this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnTimKiem.UseVisualStyleBackColor = false;
+			this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+			// 
 			// label3
 			// 
 			this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -155,19 +168,7 @@
 			this.txtLocTheoTen.Name = "txtLocTheoTen";
 			this.txtLocTheoTen.Size = new System.Drawing.Size(187, 25);
 			this.txtLocTheoTen.TabIndex = 0;
-			// 
-			// btnTimKiem
-			// 
-			this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnTimKiem.BackColor = System.Drawing.Color.White;
-			this.btnTimKiem.Image = global::QuanLyDienThoai.Properties.Resources.icons8_search__1_;
-			this.btnTimKiem.Location = new System.Drawing.Point(339, 6);
-			this.btnTimKiem.Name = "btnTimKiem";
-			this.btnTimKiem.Size = new System.Drawing.Size(48, 44);
-			this.btnTimKiem.TabIndex = 2;
-			this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnTimKiem.UseVisualStyleBackColor = false;
-			this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+			this.txtLocTheoTen.TextChanged += new System.EventHandler(this.btnTimKiem_Click);
 			// 
 			// frmSanPham
 			// 

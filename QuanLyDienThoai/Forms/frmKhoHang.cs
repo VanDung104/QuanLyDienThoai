@@ -47,14 +47,8 @@ namespace QuanLyDienThoai.Forms
 
 		private void btnTimKiem_Click(object sender, EventArgs e)
 		{
-			if (string.IsNullOrEmpty(txtTimKiem.Text))
-			{
-				MessageBox.Show("Nhập tên hàng để thực hiện tìm kiếm!", "");
-			}
-			else
-			{
-				dgvSanPhamKho.DataSource = db.DataReader("select HANGHOA.MaHH,HANGHOA.TenHH, HANGHOA.Hang,HANGHOA.GiaBan,HANGHOA.So_Luong from HANGHOA where TenHH like '%" + txtTimKiem.Text + "%'");
-			}
+
+			dgvSanPhamKho.DataSource = db.DataReader("select HANGHOA.MaHH,HANGHOA.TenHH, HANGHOA.Hang,HANGHOA.GiaBan,HANGHOA.So_Luong from HANGHOA where TenHH like '%" + txtTimKiem.Text + "%'");
 			btnIn.Enabled = true;
 			btnNhapHang.Enabled = true;
 		}
