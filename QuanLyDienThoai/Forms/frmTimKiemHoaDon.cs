@@ -53,7 +53,6 @@ namespace QuanLyDienThoai.Forms
             {
                 sql += $" and hd.MaNV = '{cboNhanVien.Text}'";
             }
-            MessageBox.Show(sql);
             DataTable dt = dtbase.DataReader(sql);
             if (dt.Rows.Count > 0)
             {
