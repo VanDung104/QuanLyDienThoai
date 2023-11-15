@@ -46,7 +46,6 @@
 			this.dgvdata = new System.Windows.Forms.DataGridView();
 			this.panChucNang = new System.Windows.Forms.Panel();
 			this.grbChucNang = new System.Windows.Forms.GroupBox();
-			this.btnThongKe = new System.Windows.Forms.Button();
 			this.btnIn = new System.Windows.Forms.Button();
 			this.BtnLuu = new System.Windows.Forms.Button();
 			this.btnXoa = new System.Windows.Forms.Button();
@@ -235,7 +234,6 @@
 			// grbChucNang
 			// 
 			this.grbChucNang.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.grbChucNang.Controls.Add(this.btnThongKe);
 			this.grbChucNang.Controls.Add(this.btnIn);
 			this.grbChucNang.Controls.Add(this.BtnLuu);
 			this.grbChucNang.Controls.Add(this.btnXoa);
@@ -248,15 +246,6 @@
 			this.grbChucNang.TabStop = false;
 			this.grbChucNang.Text = "Chức Năng";
 			// 
-			// btnThongKe
-			// 
-			this.btnThongKe.Location = new System.Drawing.Point(17, 483);
-			this.btnThongKe.Name = "btnThongKe";
-			this.btnThongKe.Size = new System.Drawing.Size(156, 65);
-			this.btnThongKe.TabIndex = 0;
-			this.btnThongKe.Text = "Thống kê";
-			this.btnThongKe.UseVisualStyleBackColor = true;
-			// 
 			// btnIn
 			// 
 			this.btnIn.Location = new System.Drawing.Point(17, 385);
@@ -265,6 +254,7 @@
 			this.btnIn.TabIndex = 0;
 			this.btnIn.Text = "In";
 			this.btnIn.UseVisualStyleBackColor = true;
+			this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
 			// 
 			// BtnLuu
 			// 
@@ -359,7 +349,6 @@
 		private System.Windows.Forms.Button btnThemAnh;
 		private System.Windows.Forms.PictureBox picAnh;
 		private System.Windows.Forms.DateTimePicker dtbNgaySinh;
-		private System.Windows.Forms.Button btnThongKe;
 		private System.Windows.Forms.Button btnIn;
 		private System.Windows.Forms.OpenFileDialog dlgAnh;
 	}

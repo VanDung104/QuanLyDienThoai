@@ -61,6 +61,12 @@
     <Compile Include="Forms\frmDonHang.Designer.cs">
       <DependentUpon>frmDonHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmInKhachHangPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInKhachHangPDF.Designer.cs">
+      <DependentUpon>frmInKhachHangPDF.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmKhoHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     <EmbeddedResource Include="Forms\frmDonHang.resx">
       <DependentUpon>frmDonHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmInKhachHangPDF.resx">
+      <DependentUpon>frmInKhachHangPDF.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmKhoHang.resx">
       <DependentUpon>frmKhoHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +167,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -205,6 +215,7 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Icon\icons8-print.gif" />
     <Content Include="bin\ImagePhone\HuaweiMate60.jpg" />
     <Content Include="bin\ImagePhone\HuaweiP50.jpg" />
     <Content Include="bin\ImagePhone\Ip11.jpg" />

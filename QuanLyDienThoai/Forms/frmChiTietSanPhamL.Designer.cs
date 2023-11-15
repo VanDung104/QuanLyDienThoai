@@ -129,6 +129,7 @@
 			// 
 			// txtDacDiem
 			// 
+			this.txtDacDiem.Enabled = false;
 			this.txtDacDiem.Location = new System.Drawing.Point(6, 251);
 			this.txtDacDiem.Multiline = true;
 			this.txtDacDiem.Name = "txtDacDiem";

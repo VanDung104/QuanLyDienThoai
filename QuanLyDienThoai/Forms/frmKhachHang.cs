@@ -17,7 +17,6 @@ namespace QuanLyDienThoai.Forms
 		DataBaseProcess db = new DataBaseProcess();
 		string strAnh;
 		Functions ft = new Functions();
-		string anh;
 		int kt = 0;
 		public frmKhachHang()
 		{
@@ -75,11 +74,30 @@ namespace QuanLyDienThoai.Forms
 			dgvdata.Columns[5].HeaderText = "File Ảnh";
 			btnXoa.Enabled = false;
 			btnSua.Enabled = false;
+			btnIn.Enabled = false;
 		}
 
 		private void btnXoa_Click(object sender, EventArgs e)
 		{
-
+			DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn Khách Hàng này!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+			if ((result == DialogResult.No))
+			{
+				return;
+			}
+			else
+			{
+				DataTable ctHD = db.DataReader("select *from HOADON where MaKH = '" + txtMaKH.Text + "'");
+				if (ctHD.Rows.Count != 0)
+				{
+					MessageBox.Show("Khách Hàng này không thể xóa được!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+				else
+				{
+					db.DataChange("delete KHACHHANG where maKH = '" + txtMaKH.Text + "'");
+					dgvdata.DataSource = db.DataReader("select *from KHACHHANG");
+				}
+			}
+			btnXoa.Enabled = false;
 		}
 
 		private void dgvdata_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -92,7 +110,7 @@ namespace QuanLyDienThoai.Forms
 				}
 				else
 				{
-					grbChiTietChung.Enabled = true;
+					ResetValue();
 					btnXoa.Enabled = true;
 					btnSua.Enabled = true;
 					txtMaKH.Text = dgvdata.CurrentRow.Cells[0].Value.ToString();
@@ -101,9 +119,11 @@ namespace QuanLyDienThoai.Forms
 					txtSDT.Text = dgvdata.CurrentRow.Cells[3].Value.ToString();
 					dtbNgaySinh.Text = Convert.ToDateTime(dgvdata.CurrentRow.Cells[4].Value.ToString().ToString()).ToShortDateString();
 					picAnh.Image = Image.FromFile("ImagePhone\\" + dgvdata.CurrentRow.Cells[5].Value.ToString());
-					anh = dgvdata.CurrentRow.Cells[5].Value.ToString();
+					strAnh = dgvdata.CurrentRow.Cells[5].Value.ToString();
 					btnSua.Enabled = true;
 					btnXoa.Enabled = true;
+					btnIn.Enabled = true;
+					grbChiTietChung.Enabled = false;
 				}
 			}
 			catch { }
@@ -121,7 +141,19 @@ namespace QuanLyDienThoai.Forms
 				else
 				{
 					DateTime dtNgaySinh = Convert.ToDateTime(dtbNgaySinh.Text.Trim());
-					db.DataChange("insert into KHACHHANG values('" + txtMaKH.Text + "',N'" + txtTenKH.Text + "',N'" + txtDiaChi.Text + "','" + txtSDT.Text + "','" + string.Format("{0:yyyy/MM/dd}", dtNgaySinh) + "','" + anh + "')");
+					db.DataChange("insert into KHACHHANG values('" + txtMaKH.Text + "',N'" + txtTenKH.Text + "',N'" + txtDiaChi.Text + "','" + txtSDT.Text + "','" + string.Format("{0:yyyy/MM/dd}", dtNgaySinh) + "','" + strAnh + "')");
+					kt = 0;
+					dgvdata.DataSource = db.DataReader("select *from KHACHHANG");
+					ResetValue();
+					grbChiTietChung.Enabled = false;
+				}
+			}
+			else
+			{
+				if(kt == 2)
+				{
+					DateTime dtNgaySinh = Convert.ToDateTime(dtbNgaySinh.Text.Trim());
+					db.DataChange("update KHACHHANG set TenKH = N'"+txtTenKH.Text+"',DiaChi=N'"+txtDiaChi.Text+"',SDT='"+txtSDT.Text+"',NgaySinh='"+ string.Format("{0:yyyy/MM/dd}", dtNgaySinh)+"', Anh='"+ strAnh+ "' where maKH = '"+txtMaKH.Text+"'");
 					kt = 0;
 					dgvdata.DataSource = db.DataReader("select *from KHACHHANG");
 					ResetValue();
@@ -132,8 +164,21 @@ namespace QuanLyDienThoai.Forms
 
 		private void btnSua_Click(object sender, EventArgs e)
 		{
-			kt = 1;
+			kt = 2;
 			grbChiTietChung.Enabled = true;
+		}
+
+		private void btnIn_Click(object sender, EventArgs e)
+		{
+			frmInKhachHangPDF frmIn = new frmInKhachHangPDF();
+			frmIn.maHK =txtMaKH.Text = dgvdata.CurrentRow.Cells[0].Value.ToString();
+			frmIn.ten = dgvdata.CurrentRow.Cells[1].Value.ToString();
+			frmIn.diachi = dgvdata.CurrentRow.Cells[2].Value.ToString();
+			frmIn.sdt = dgvdata.CurrentRow.Cells[3].Value.ToString();
+			frmIn.ngaysinh = Convert.ToDateTime(dgvdata.CurrentRow.Cells[4].Value.ToString().ToString()).ToShortDateString();
+			frmIn.fileAnh = dgvdata.CurrentRow.Cells[5].Value.ToString();
+			frmIn.ShowDialog();
+			btnIn.Enabled = false;
 		}
 	}
 }

@@ -135,8 +135,7 @@ namespace QuanLyDienThoai.Forms
                 }
                 else if (kt == 2)
                 {
-                    string bonho = cbmBoNho.SelectedItem.ToString();
-                    db.DataChange("update HANGHOA set TenHH = '" + txtTenHang.Text + "', GiaBan = '" + txtGiaBan.Text + "', Hang = '" + cbmHang.SelectedItem.ToString() + "', Bo_nho = '" + bonho + "', So_luong = " + Convert.ToInt32(txtSLM.Text) + ", Anh = '" + strAnh + "',DacDiem= N'" + txtDacDiem.Text + "', Loai = N'" + cmbLoai.SelectedItem.ToString() + "' where maHH ='" + txtMaHH.Text + "'");
+                    db.DataChange("update HANGHOA set TenHH = '" + txtTenHang.Text + "', GiaBan = '" + txtGiaBan.Text + "', Hang = '" + cbmHang.SelectedItem.ToString() + "', Bo_nho = '" + cbmBoNho.SelectedItem.ToString() + "', So_luong = " + Convert.ToInt32(txtSLM.Text) + ", Anh = '" + strAnh + "',DacDiem= N'" + txtDacDiem.Text + "', Loai = N'" + cmbLoai.SelectedItem.ToString() + "' where maHH ='" + txtMaHH.Text + "'");
                     dgvNhapHang.DataSource = db.DataReader("select MaHH, TenHH, GiaBan, Hang, Bo_nho, So_luong, Anh, Loai, DacDiem from HANGHOA");
                     kt = 0;
                     ResetValue();
