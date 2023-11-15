@@ -52,7 +52,7 @@ namespace QuanLyDienThoai.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi" + ex.ToString(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Không Click Linh Tinh" , "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -101,6 +101,7 @@ namespace QuanLyDienThoai.Forms
 			dgvNhapHang.Columns[6].HeaderText = "File ảnh";
 			dgvNhapHang.Columns[7].HeaderText = "Loại";
 			dgvNhapHang.Columns[8].HeaderText = "Đặc Điểm";
+            grbChiTietNhap.Enabled = false;
 		}
 
         private void btnThemHangMoi_Click(object sender, EventArgs e)
@@ -140,6 +141,7 @@ namespace QuanLyDienThoai.Forms
                     kt = 0;
                     ResetValue();
                 }
+                grbChiTietNhap.Enabled = false;
             }catch (Exception ex)
             {
                 MessageBox.Show("lỗi "+ex.Message.ToString(),"lỗi");

@@ -30,14 +30,14 @@
         {
 			this.dgvSanPham = new System.Windows.Forms.DataGridView();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.btnLamMoi = new System.Windows.Forms.Button();
 			this.cbmLocHang = new System.Windows.Forms.ComboBox();
 			this.cbmLocGia = new System.Windows.Forms.ComboBox();
-			this.btnTimKiem = new System.Windows.Forms.Button();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.txtLocTheoTen = new System.Windows.Forms.TextBox();
-			this.btnLamMoi = new System.Windows.Forms.Button();
+			this.btnTimKiem = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -48,6 +48,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.dgvSanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.dgvSanPham.BackgroundColor = System.Drawing.Color.Coral;
 			this.dgvSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvSanPham.Location = new System.Drawing.Point(2, 108);
 			this.dgvSanPham.Name = "dgvSanPham";
@@ -61,6 +62,7 @@
 			// 
 			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.panel1.BackColor = System.Drawing.Color.SandyBrown;
 			this.panel1.Controls.Add(this.btnLamMoi);
 			this.panel1.Controls.Add(this.cbmLocHang);
 			this.panel1.Controls.Add(this.cbmLocGia);
@@ -73,6 +75,17 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(694, 108);
 			this.panel1.TabIndex = 1;
+			// 
+			// btnLamMoi
+			// 
+			this.btnLamMoi.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnLamMoi.Location = new System.Drawing.Point(489, 65);
+			this.btnLamMoi.Name = "btnLamMoi";
+			this.btnLamMoi.Size = new System.Drawing.Size(75, 25);
+			this.btnLamMoi.TabIndex = 4;
+			this.btnLamMoi.Text = "Làm Mới";
+			this.btnLamMoi.UseVisualStyleBackColor = true;
+			this.btnLamMoi.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// cbmLocHang
 			// 
@@ -105,26 +118,15 @@
 			this.cbmLocGia.TabIndex = 3;
 			this.cbmLocGia.SelectedValueChanged += new System.EventHandler(this.cbmLocGia_SelectedValueChanged);
 			// 
-			// btnTimKiem
-			// 
-			this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnTimKiem.Location = new System.Drawing.Point(371, 11);
-			this.btnTimKiem.Name = "btnTimKiem";
-			this.btnTimKiem.Size = new System.Drawing.Size(75, 25);
-			this.btnTimKiem.TabIndex = 2;
-			this.btnTimKiem.Text = "Tìm kiếm";
-			this.btnTimKiem.UseVisualStyleBackColor = true;
-			this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
-			// 
 			// label3
 			// 
 			this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.label3.AutoSize = true;
 			this.label3.Location = new System.Drawing.Point(247, 68);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(40, 17);
+			this.label3.Size = new System.Drawing.Size(43, 17);
 			this.label3.TabIndex = 1;
-			this.label3.Text = "Hãng";
+			this.label3.Text = "Hãng:";
 			// 
 			// label2
 			// 
@@ -132,9 +134,9 @@
 			this.label2.AutoSize = true;
 			this.label2.Location = new System.Drawing.Point(22, 69);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(28, 17);
+			this.label2.Size = new System.Drawing.Size(31, 17);
 			this.label2.TabIndex = 1;
-			this.label2.Text = "Giá";
+			this.label2.Text = "Giá:";
 			// 
 			// label1
 			// 
@@ -154,21 +156,24 @@
 			this.txtLocTheoTen.Size = new System.Drawing.Size(187, 25);
 			this.txtLocTheoTen.TabIndex = 0;
 			// 
-			// btnLamMoi
+			// btnTimKiem
 			// 
-			this.btnLamMoi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnLamMoi.Location = new System.Drawing.Point(489, 65);
-			this.btnLamMoi.Name = "btnLamMoi";
-			this.btnLamMoi.Size = new System.Drawing.Size(75, 25);
-			this.btnLamMoi.TabIndex = 4;
-			this.btnLamMoi.Text = "Làm Mới";
-			this.btnLamMoi.UseVisualStyleBackColor = true;
-			this.btnLamMoi.Click += new System.EventHandler(this.button1_Click);
+			this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnTimKiem.BackColor = System.Drawing.Color.White;
+			this.btnTimKiem.Image = global::QuanLyDienThoai.Properties.Resources.icons8_search__1_;
+			this.btnTimKiem.Location = new System.Drawing.Point(339, 6);
+			this.btnTimKiem.Name = "btnTimKiem";
+			this.btnTimKiem.Size = new System.Drawing.Size(48, 44);
+			this.btnTimKiem.TabIndex = 2;
+			this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnTimKiem.UseVisualStyleBackColor = false;
+			this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
 			// 
 			// frmSanPham
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(699, 520);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.dgvSanPham);

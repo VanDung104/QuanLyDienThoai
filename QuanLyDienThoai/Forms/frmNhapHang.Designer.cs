@@ -33,7 +33,6 @@
 			this.cmbLoai = new System.Windows.Forms.ComboBox();
 			this.cbmHang = new System.Windows.Forms.ComboBox();
 			this.btnAnh = new System.Windows.Forms.Button();
-			this.picAnh = new System.Windows.Forms.PictureBox();
 			this.cbmBoNho = new System.Windows.Forms.ComboBox();
 			this.txtDacDiem = new System.Windows.Forms.TextBox();
 			this.txtSLM = new System.Windows.Forms.TextBox();
@@ -48,19 +47,20 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.txtMaHH = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.btnNhap = new System.Windows.Forms.Button();
-			this.btnThemHangMoi = new System.Windows.Forms.Button();
 			this.txtSL = new System.Windows.Forms.TextBox();
 			this.label7 = new System.Windows.Forms.Label();
-			this.btnLuu = new System.Windows.Forms.Button();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.btnEdit = new System.Windows.Forms.Button();
 			this.label8 = new System.Windows.Forms.Label();
 			this.dlgAnh = new System.Windows.Forms.OpenFileDialog();
+			this.btnEdit = new System.Windows.Forms.Button();
+			this.btnThemHangMoi = new System.Windows.Forms.Button();
+			this.btnLuu = new System.Windows.Forms.Button();
+			this.btnNhap = new System.Windows.Forms.Button();
+			this.picAnh = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.dgvNhapHang)).BeginInit();
 			this.grbChiTietNhap.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.picAnh)).BeginInit();
 			this.panel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.picAnh)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// dgvNhapHang
@@ -147,17 +147,6 @@
 			this.btnAnh.Text = "Chọn Ảnh";
 			this.btnAnh.UseVisualStyleBackColor = true;
 			this.btnAnh.Click += new System.EventHandler(this.btnAnh_Click);
-			// 
-			// picAnh
-			// 
-			this.picAnh.BackColor = System.Drawing.Color.White;
-			this.picAnh.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.picAnh.Location = new System.Drawing.Point(816, 34);
-			this.picAnh.Name = "picAnh";
-			this.picAnh.Size = new System.Drawing.Size(153, 88);
-			this.picAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.picAnh.TabIndex = 3;
-			this.picAnh.TabStop = false;
 			// 
 			// cbmBoNho
 			// 
@@ -296,34 +285,10 @@
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Mã Hàng:";
 			// 
-			// btnNhap
-			// 
-			this.btnNhap.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-			this.btnNhap.Location = new System.Drawing.Point(396, 34);
-			this.btnNhap.Margin = new System.Windows.Forms.Padding(4);
-			this.btnNhap.Name = "btnNhap";
-			this.btnNhap.Size = new System.Drawing.Size(98, 46);
-			this.btnNhap.TabIndex = 0;
-			this.btnNhap.Text = "Nhập";
-			this.btnNhap.UseVisualStyleBackColor = true;
-			this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
-			// 
-			// btnThemHangMoi
-			// 
-			this.btnThemHangMoi.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-			this.btnThemHangMoi.Location = new System.Drawing.Point(520, 34);
-			this.btnThemHangMoi.Margin = new System.Windows.Forms.Padding(4);
-			this.btnThemHangMoi.Name = "btnThemHangMoi";
-			this.btnThemHangMoi.Size = new System.Drawing.Size(98, 46);
-			this.btnThemHangMoi.TabIndex = 0;
-			this.btnThemHangMoi.Text = "Thêm Hàng Mới";
-			this.btnThemHangMoi.UseVisualStyleBackColor = true;
-			this.btnThemHangMoi.Click += new System.EventHandler(this.btnThemHangMoi_Click);
-			// 
 			// txtSL
 			// 
 			this.txtSL.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-			this.txtSL.Location = new System.Drawing.Point(222, 47);
+			this.txtSL.Location = new System.Drawing.Point(117, 47);
 			this.txtSL.Margin = new System.Windows.Forms.Padding(4);
 			this.txtSL.Name = "txtSL";
 			this.txtSL.Size = new System.Drawing.Size(147, 25);
@@ -333,24 +298,12 @@
 			// 
 			this.label7.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
 			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(121, 51);
+			this.label7.Location = new System.Drawing.Point(16, 51);
 			this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(95, 17);
 			this.label7.TabIndex = 0;
 			this.label7.Text = "Số lượng nhập:";
-			// 
-			// btnLuu
-			// 
-			this.btnLuu.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-			this.btnLuu.Location = new System.Drawing.Point(767, 34);
-			this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
-			this.btnLuu.Name = "btnLuu";
-			this.btnLuu.Size = new System.Drawing.Size(98, 46);
-			this.btnLuu.TabIndex = 2;
-			this.btnLuu.Text = "Lưu";
-			this.btnLuu.UseVisualStyleBackColor = true;
-			this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
 			// 
 			// panel1
 			// 
@@ -369,17 +322,6 @@
 			this.panel1.Size = new System.Drawing.Size(987, 101);
 			this.panel1.TabIndex = 3;
 			// 
-			// btnEdit
-			// 
-			this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-			this.btnEdit.Location = new System.Drawing.Point(645, 34);
-			this.btnEdit.Name = "btnEdit";
-			this.btnEdit.Size = new System.Drawing.Size(98, 46);
-			this.btnEdit.TabIndex = 3;
-			this.btnEdit.Text = "Sửa sản phẩm";
-			this.btnEdit.UseVisualStyleBackColor = true;
-			this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-			// 
 			// label8
 			// 
 			this.label8.AutoSize = true;
@@ -394,6 +336,80 @@
 			// dlgAnh
 			// 
 			this.dlgAnh.FileName = "openFileDialog1";
+			// 
+			// btnEdit
+			// 
+			this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+			this.btnEdit.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnEdit.Image = global::QuanLyDienThoai.Properties.Resources.icons8_edit;
+			this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnEdit.Location = new System.Drawing.Point(642, 28);
+			this.btnEdit.Name = "btnEdit";
+			this.btnEdit.Size = new System.Drawing.Size(151, 59);
+			this.btnEdit.TabIndex = 3;
+			this.btnEdit.Text = "              Sửa Hàng";
+			this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnEdit.UseVisualStyleBackColor = true;
+			this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+			// 
+			// btnThemHangMoi
+			// 
+			this.btnThemHangMoi.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+			this.btnThemHangMoi.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnThemHangMoi.Image = global::QuanLyDienThoai.Properties.Resources.icons8_add;
+			this.btnThemHangMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnThemHangMoi.Location = new System.Drawing.Point(461, 28);
+			this.btnThemHangMoi.Margin = new System.Windows.Forms.Padding(4);
+			this.btnThemHangMoi.Name = "btnThemHangMoi";
+			this.btnThemHangMoi.Size = new System.Drawing.Size(151, 59);
+			this.btnThemHangMoi.TabIndex = 0;
+			this.btnThemHangMoi.Text = "              Thêm Mới";
+			this.btnThemHangMoi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnThemHangMoi.UseVisualStyleBackColor = true;
+			this.btnThemHangMoi.Click += new System.EventHandler(this.btnThemHangMoi_Click);
+			// 
+			// btnLuu
+			// 
+			this.btnLuu.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+			this.btnLuu.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnLuu.Image = global::QuanLyDienThoai.Properties.Resources.icons8_save;
+			this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnLuu.Location = new System.Drawing.Point(825, 28);
+			this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
+			this.btnLuu.Name = "btnLuu";
+			this.btnLuu.Size = new System.Drawing.Size(151, 59);
+			this.btnLuu.TabIndex = 2;
+			this.btnLuu.Text = "                  Lưu";
+			this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnLuu.UseVisualStyleBackColor = true;
+			this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+			// 
+			// btnNhap
+			// 
+			this.btnNhap.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+			this.btnNhap.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnNhap.Image = global::QuanLyDienThoai.Properties.Resources.icons8_add__1_;
+			this.btnNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnNhap.Location = new System.Drawing.Point(281, 28);
+			this.btnNhap.Margin = new System.Windows.Forms.Padding(4);
+			this.btnNhap.Name = "btnNhap";
+			this.btnNhap.Size = new System.Drawing.Size(151, 59);
+			this.btnNhap.TabIndex = 0;
+			this.btnNhap.Text = "            Nhập Hàng";
+			this.btnNhap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnNhap.UseVisualStyleBackColor = true;
+			this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
+			// 
+			// picAnh
+			// 
+			this.picAnh.BackColor = System.Drawing.Color.White;
+			this.picAnh.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.picAnh.Location = new System.Drawing.Point(816, 34);
+			this.picAnh.Name = "picAnh";
+			this.picAnh.Size = new System.Drawing.Size(153, 88);
+			this.picAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.picAnh.TabIndex = 3;
+			this.picAnh.TabStop = false;
 			// 
 			// frmNhapHang
 			// 
@@ -413,9 +429,9 @@
 			((System.ComponentModel.ISupportInitialize)(this.dgvNhapHang)).EndInit();
 			this.grbChiTietNhap.ResumeLayout(false);
 			this.grbChiTietNhap.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.picAnh)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.picAnh)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

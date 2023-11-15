@@ -216,6 +216,28 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Icon\icons8-print.gif" />
+    <None Include="bin\Icon\icons8-search %281%29.gif" />
+    <None Include="bin\Icon\icons8-add %281%29.gif" />
+    <None Include="bin\Icon\icons8-add.gif" />
+    <None Include="bin\Icon\icons8-edit.gif" />
+    <None Include="bin\Icon\icons8-save.gif" />
+    <None Include="bin\Icon\icons8-add-user-male-skin-type-7-48.png" />
+    <None Include="bin\Icon\icons8-edit-profile-64.png" />
+    <None Include="bin\Icon\icons8-edit-profile-48.png" />
+    <None Include="bin\Icon\icons8-delete.gif" />
+    <None Include="bin\Icon\icons8-save %281%29.gif" />
+    <None Include="bin\Icon\printer.png" />
+    <None Include="bin\Icon\icons8-refresh.gif" />
+    <None Include="bin\Icon\icons8-import-48.png" />
+    <None Include="bin\Icon\icons8-export-excel-48.png" />
+    <None Include="bin\Icon\icons8-home.gif" />
+    <None Include="bin\Icon\icons8-home %281%29.gif" />
+    <None Include="bin\Icon\icons8-staff-48.png" />
+    <None Include="bin\Icon\icons8-bill-48.png" />
+    <None Include="bin\Icon\icons8-warehouse-48.png" />
+    <None Include="bin\Icon\icons8-graphic-48.png" />
+    <None Include="bin\Icon\icons8-smartphone-50.png" />
+    <None Include="bin\Icon\icons8-home-50.png" />
     <Content Include="bin\ImagePhone\HuaweiMate60.jpg" />
     <Content Include="bin\ImagePhone\HuaweiP50.jpg" />
     <Content Include="bin\ImagePhone\Ip11.jpg" />

@@ -34,11 +34,11 @@
 			this.btnTimKiem = new System.Windows.Forms.Button();
 			this.txtTimKiem = new System.Windows.Forms.TextBox();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.btnXoaSanPham = new System.Windows.Forms.Button();
+			this.panel2 = new System.Windows.Forms.Panel();
 			this.btnIn = new System.Windows.Forms.Button();
 			this.btnLamMoi = new System.Windows.Forms.Button();
 			this.btnNhapHang = new System.Windows.Forms.Button();
-			this.btnXoaSanPham = new System.Windows.Forms.Button();
-			this.panel2 = new System.Windows.Forms.Panel();
 			((System.ComponentModel.ISupportInitialize)(this.dgvSanPhamKho)).BeginInit();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
@@ -118,47 +118,17 @@
 			this.panel1.Size = new System.Drawing.Size(674, 63);
 			this.panel1.TabIndex = 3;
 			// 
-			// btnIn
-			// 
-			this.btnIn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnIn.Location = new System.Drawing.Point(354, 23);
-			this.btnIn.Name = "btnIn";
-			this.btnIn.Size = new System.Drawing.Size(95, 47);
-			this.btnIn.TabIndex = 0;
-			this.btnIn.Text = "Xuất Excel";
-			this.btnIn.UseVisualStyleBackColor = true;
-			this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
-			// 
-			// btnLamMoi
-			// 
-			this.btnLamMoi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnLamMoi.Location = new System.Drawing.Point(63, 23);
-			this.btnLamMoi.Name = "btnLamMoi";
-			this.btnLamMoi.Size = new System.Drawing.Size(95, 47);
-			this.btnLamMoi.TabIndex = 0;
-			this.btnLamMoi.Text = "Làm mới";
-			this.btnLamMoi.UseVisualStyleBackColor = true;
-			this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
-			// 
-			// btnNhapHang
-			// 
-			this.btnNhapHang.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnNhapHang.Location = new System.Drawing.Point(200, 23);
-			this.btnNhapHang.Name = "btnNhapHang";
-			this.btnNhapHang.Size = new System.Drawing.Size(95, 47);
-			this.btnNhapHang.TabIndex = 0;
-			this.btnNhapHang.Text = "Nhập Hàng";
-			this.btnNhapHang.UseVisualStyleBackColor = true;
-			this.btnNhapHang.Click += new System.EventHandler(this.button2_Click);
-			// 
 			// btnXoaSanPham
 			// 
 			this.btnXoaSanPham.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.btnXoaSanPham.Location = new System.Drawing.Point(511, 23);
+			this.btnXoaSanPham.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnXoaSanPham.Image = global::QuanLyDienThoai.Properties.Resources.icons8_delete;
+			this.btnXoaSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnXoaSanPham.Location = new System.Drawing.Point(520, 23);
 			this.btnXoaSanPham.Name = "btnXoaSanPham";
-			this.btnXoaSanPham.Size = new System.Drawing.Size(95, 47);
+			this.btnXoaSanPham.Size = new System.Drawing.Size(131, 57);
 			this.btnXoaSanPham.TabIndex = 0;
-			this.btnXoaSanPham.Text = "Xóa sản phẩm";
+			this.btnXoaSanPham.Text = "      Xóa";
 			this.btnXoaSanPham.UseVisualStyleBackColor = true;
 			this.btnXoaSanPham.Click += new System.EventHandler(this.btnXoaSanPham_Click);
 			// 
@@ -175,6 +145,48 @@
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(674, 91);
 			this.panel2.TabIndex = 4;
+			// 
+			// btnIn
+			// 
+			this.btnIn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnIn.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnIn.Image = global::QuanLyDienThoai.Properties.Resources.icons8_export_excel_48;
+			this.btnIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnIn.Location = new System.Drawing.Point(357, 23);
+			this.btnIn.Name = "btnIn";
+			this.btnIn.Size = new System.Drawing.Size(131, 57);
+			this.btnIn.TabIndex = 0;
+			this.btnIn.Text = "         Xuất Excel";
+			this.btnIn.UseVisualStyleBackColor = true;
+			this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
+			// 
+			// btnLamMoi
+			// 
+			this.btnLamMoi.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnLamMoi.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnLamMoi.Image = global::QuanLyDienThoai.Properties.Resources.icons8_refresh;
+			this.btnLamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnLamMoi.Location = new System.Drawing.Point(34, 23);
+			this.btnLamMoi.Name = "btnLamMoi";
+			this.btnLamMoi.Size = new System.Drawing.Size(131, 57);
+			this.btnLamMoi.TabIndex = 0;
+			this.btnLamMoi.Text = "       Làm mới";
+			this.btnLamMoi.UseVisualStyleBackColor = true;
+			this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+			// 
+			// btnNhapHang
+			// 
+			this.btnNhapHang.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnNhapHang.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnNhapHang.Image = global::QuanLyDienThoai.Properties.Resources.icons8_import_48;
+			this.btnNhapHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnNhapHang.Location = new System.Drawing.Point(194, 23);
+			this.btnNhapHang.Name = "btnNhapHang";
+			this.btnNhapHang.Size = new System.Drawing.Size(131, 57);
+			this.btnNhapHang.TabIndex = 0;
+			this.btnNhapHang.Text = "          Nhập Hàng";
+			this.btnNhapHang.UseVisualStyleBackColor = true;
+			this.btnNhapHang.Click += new System.EventHandler(this.button2_Click);
 			// 
 			// frmKhoHang
 			// 
