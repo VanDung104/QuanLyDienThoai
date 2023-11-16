@@ -54,7 +54,7 @@ namespace QuanLyDienThoai
 
         private void btnNhacc_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.frmNhaCungCap(), sender);
+            OpenChildForm(new Forms.frmKhachHang(), sender);
         }
 
         private void btnDonHang_Click(object sender, EventArgs e)
