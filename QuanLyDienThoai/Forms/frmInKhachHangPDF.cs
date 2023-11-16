@@ -22,7 +22,7 @@ namespace QuanLyDienThoai.Forms
 			InitializeComponent();
 			date = DateTime.Now.ToString("dd/MM/yyyy");
 		}
-		//pp
+
 		private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
 		{
 			Rectangle pagearea = e.PageBounds;

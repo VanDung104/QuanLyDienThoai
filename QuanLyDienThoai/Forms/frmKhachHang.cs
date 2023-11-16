@@ -49,6 +49,7 @@ namespace QuanLyDienThoai.Forms
 			txtTenKH.Text = null;
 			dtbNgaySinh.Text = dt.ToShortDateString();
 			picAnh.Image = null;
+			//ppp
 
 		}
 		private void btnThem_Click(object sender, EventArgs e)
