@@ -111,6 +111,7 @@ namespace QuanLyDienThoai.Forms
             cboMaKH.Enabled = false;
             btnTao.Enabled = true;
             btnXoaSP.Enabled = false;
+            button1.Enabled = false;
             dgvHangHoa.DataSource = dtbase.DataReader("Select * from fnViewHD('" + txtMaDH.Text + "')");
 
             dgvHangHoa.Columns[0].HeaderText = "Mã sản phẩm";
@@ -259,6 +260,15 @@ namespace QuanLyDienThoai.Forms
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             ResetValue();
+            btnHuy.Enabled = false;
+            btnIn.Enabled = false;
+            cboMaHH.Enabled = false;
+            cboNV.Enabled = false;
+            cboMaKH.Enabled = false;
+            btnTao.Enabled = true;
+            btnXoaSP.Enabled = false;
+            button1.Enabled = false;
+            cboTimKiem.DataSource = null;
         }
 
         private void cboTimKiem_Click(object sender, EventArgs e)
@@ -270,27 +280,32 @@ namespace QuanLyDienThoai.Forms
         private void btnTim_Click(object sender, EventArgs e)
         {
             ResetSP();
+
             cboMaHH.Enabled = true;
             btnHuy.Enabled = true;
             btnIn.Enabled = true;
-            DataTable dtHD = dtbase.DataReader("Select * from fnViewHD_KH_NV('" + cboTimKiem.SelectedValue.ToString() + "')");
-            if (dtHD.Rows.Count > 0)
+            if(cboTimKiem.Text != "")
             {
-                txtMaDH.Text = dtHD.Rows[0]["MaHD"].ToString();
-                cboNV.Text = dtHD.Rows[0]["MaNV"].ToString();
-                cboMaKH.Text = dtHD.Rows[0]["MaKH"].ToString();
-                txtTongGia.Text = dtHD.Rows[0]["Tong_tien"].ToString();
-                dgvHangHoa.DataSource = dtbase.DataReader("Select * from fnViewHD('" + txtMaDH.Text + "')");
-            }
-            else
-            {
-                DataTable dtHDTrong = dtbase.DataReader("Select * from HOADON where MaHD = '" + cboTimKiem.SelectedValue.ToString() + "'");
+                DataTable dtHD = dtbase.DataReader("Select * from fnViewHD_KH_NV('" + cboTimKiem.SelectedValue.ToString() + "')");
+                if (dtHD.Rows.Count > 0)
+                {
+                    txtMaDH.Text = dtHD.Rows[0]["MaHD"].ToString();
+                    cboNV.Text = dtHD.Rows[0]["MaNV"].ToString();
+                    cboMaKH.Text = dtHD.Rows[0]["MaKH"].ToString();
+                    txtTongGia.Text = dtHD.Rows[0]["Tong_tien"].ToString();
+                    dgvHangHoa.DataSource = dtbase.DataReader("Select * from fnViewHD('" + txtMaDH.Text + "')");
+                }
+                else
+                {
+                    DataTable dtHDTrong = dtbase.DataReader("Select * from HOADON where MaHD = '" + cboTimKiem.SelectedValue.ToString() + "'");
 
-                txtMaDH.Text = dtHDTrong.Rows[0]["MaHD"].ToString();
-                cboNV.Text = dtHDTrong.Rows[0]["MaNV"].ToString();
-                cboMaKH.Text = dtHDTrong.Rows[0]["MaKH"].ToString();
-                dgvHangHoa.DataSource = dtbase.DataReader("Select * from fnViewHD('" + txtMaDH.Text + "')");
-            }
+                    txtMaDH.Text = dtHDTrong.Rows[0]["MaHD"].ToString();
+                    cboNV.Text = dtHDTrong.Rows[0]["MaNV"].ToString();
+                    cboMaKH.Text = dtHDTrong.Rows[0]["MaKH"].ToString();
+                    dgvHangHoa.DataSource = dtbase.DataReader("Select * from fnViewHD('" + txtMaDH.Text + "')");
+                }
+            }    
+            
         }
 
         private void cboTimKiem_SelectedIndexChanged(object sender, EventArgs e)
@@ -312,6 +327,7 @@ namespace QuanLyDienThoai.Forms
         {
             try
             {
+                button1.Enabled = true;
                 btnThemSP.Enabled = true;
                 btnXoaSP.Enabled = true;
                 cboMaHH.Text = dgvHangHoa.CurrentRow.Cells[0].Value.ToString();
@@ -426,7 +442,6 @@ namespace QuanLyDienThoai.Forms
                 Forms.ChiTietSP_DH frm2 = new Forms.ChiTietSP_DH();
                 
                 frm2.fileAnh = fileAnh;
-                MessageBox.Show(fileAnh);
                 frm2.maSp = dienThoai.Rows[0]["MaHH"].ToString();
                 frm2.tenSp = dienThoai.Rows[0]["tenHH"].ToString(); frm2.ghiChu = dienThoai.Rows[0]["DacDiem"].ToString();
                 frm2.giaBan = dienThoai.Rows[0]["GiaBan"].ToString(); frm2.BoNho = dienThoai.Rows[0]["Bo_nho"].ToString(); frm2.Hang = dienThoai.Rows[0]["HangSx"].ToString();

@@ -74,6 +74,7 @@ namespace QuanLyDienThoai
 
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
+            
             lblChucVu.Text = quyen == "User" ? "Nhân viên" : "Quản lý";
             lblUsername.Text = userName ;
             if(quyen == "User")
