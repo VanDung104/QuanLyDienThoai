@@ -68,11 +68,12 @@
   <ItemGroup>
     <Compile Include="Classes\CommonFunctions.cs" />
     <Compile Include="Classes\DataProcess.cs" />
-    <Compile Include="Forms\ChiTietSP_DH.cs">
+    <Compile Include="Classes\Functions.cs" />
+    <Compile Include="Forms\frmChiTietSanPhamL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ChiTietSP_DH.Designer.cs">
-      <DependentUpon>ChiTietSP_DH.cs</DependentUpon>
+    <Compile Include="Forms\frmChiTietSanPhamL.Designer.cs">
+      <DependentUpon>frmChiTietSanPhamL.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmDonHang.cs">
       <SubType>Form</SubType>
@@ -80,17 +81,29 @@
     <Compile Include="Forms\frmDonHang.Designer.cs">
       <DependentUpon>frmDonHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmInKhachHangPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInKhachHangPDF.Designer.cs">
+      <DependentUpon>frmInKhachHangPDF.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmKhoHang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmKhoHang.Designer.cs">
       <DependentUpon>frmKhoHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmNhaCungCap.cs">
+    <Compile Include="Forms\frmKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmNhaCungCap.Designer.cs">
-      <DependentUpon>frmNhaCungCap.cs</DependentUpon>
+    <Compile Include="Forms\frmKhachHang.Designer.cs">
+      <DependentUpon>frmKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmNhapHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmNhapHang.Designer.cs">
+      <DependentUpon>frmNhapHang.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmPrintHD.cs">
       <SubType>Form</SubType>
@@ -160,18 +173,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SqlServerTypes\Loader.cs" />
-    <EmbeddedResource Include="Forms\ChiTietSP_DH.resx">
-      <DependentUpon>ChiTietSP_DH.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmChiTietSanPhamL.resx">
+      <DependentUpon>frmChiTietSanPhamL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmDonHang.resx">
       <DependentUpon>frmDonHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmInKhachHangPDF.resx">
+      <DependentUpon>frmInKhachHangPDF.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmKhoHang.resx">
       <DependentUpon>frmKhoHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmNhaCungCap.resx">
-      <DependentUpon>frmNhaCungCap.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmKhachHang.resx">
+      <DependentUpon>frmKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmNhapHang.resx">
+      <DependentUpon>frmNhapHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPrintHD.resx">
       <DependentUpon>frmPrintHD.cs</DependentUpon>
@@ -350,6 +368,110 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Icon\icons8-print.gif" />
+    <None Include="bin\Icon\icons8-search %281%29.gif" />
+    <None Include="bin\Icon\icons8-add %281%29.gif" />
+    <None Include="bin\Icon\icons8-add.gif" />
+    <None Include="bin\Icon\icons8-edit.gif" />
+    <None Include="bin\Icon\icons8-save.gif" />
+    <None Include="bin\Icon\icons8-add-user-male-skin-type-7-48.png" />
+    <None Include="bin\Icon\icons8-edit-profile-64.png" />
+    <None Include="bin\Icon\icons8-edit-profile-48.png" />
+    <None Include="bin\Icon\icons8-delete.gif" />
+    <None Include="bin\Icon\icons8-save %281%29.gif" />
+    <None Include="bin\Icon\printer.png" />
+    <None Include="bin\Icon\icons8-refresh.gif" />
+    <None Include="bin\Icon\icons8-import-48.png" />
+    <None Include="bin\Icon\icons8-export-excel-48.png" />
+    <None Include="bin\Icon\icons8-home.gif" />
+    <None Include="bin\Icon\icons8-home %281%29.gif" />
+    <None Include="bin\Icon\icons8-staff-48.png" />
+    <None Include="bin\Icon\icons8-bill-48.png" />
+    <None Include="bin\Icon\icons8-warehouse-48.png" />
+    <None Include="bin\Icon\icons8-graphic-48.png" />
+    <None Include="bin\Icon\icons8-smartphone-50.png" />
+    <None Include="bin\Icon\icons8-home-50.png" />
+    <Content Include="bin\ImagePhone\HuaweiMate60.jpg" />
+    <Content Include="bin\ImagePhone\HuaweiP50.jpg" />
+    <Content Include="bin\ImagePhone\Ip11.jpg" />
+    <Content Include="bin\ImagePhone\Ip12.jpg" />
+    <Content Include="bin\ImagePhone\Ip13.jpg" />
+    <Content Include="bin\ImagePhone\Ip14.jpg" />
+    <Content Include="bin\ImagePhone\Ip14plus.jpg" />
+    <Content Include="bin\ImagePhone\Ip14prm.jpg" />
+    <Content Include="bin\ImagePhone\Ip15pro.jpg" />
+    <Content Include="bin\ImagePhone\Ip6.jpg" />
+    <Content Include="bin\ImagePhone\Ip7.jpg" />
+    <Content Include="bin\ImagePhone\Ip8.jpg" />
+    <Content Include="bin\ImagePhone\IpSE.jpeg" />
+    <Content Include="bin\ImagePhone\IpX.jpg" />
+    <Content Include="bin\ImagePhone\IpXr.jpg" />
+    <Content Include="bin\ImagePhone\LenovoK10.jpg" />
+    <Content Include="bin\ImagePhone\LenovoZ5s.jpg" />
+    <Content Include="bin\ImagePhone\Oppo5.jpg" />
+    <Content Include="bin\ImagePhone\OppoA5s.jpg" />
+    <Content Include="bin\ImagePhone\OppoA92.jpg" />
+    <Content Include="bin\ImagePhone\OppoF11.jpg" />
+    <Content Include="bin\ImagePhone\OppoF9.jpg" />
+    <Content Include="bin\ImagePhone\OppoReno5.jpg" />
+    <Content Include="bin\ImagePhone\Realme5i.jpg" />
+    <Content Include="bin\ImagePhone\Realme6.jpg" />
+    <Content Include="bin\ImagePhone\RealmeC3.jpg" />
+    <Content Include="bin\ImagePhone\RealmeC51.jpg" />
+    <Content Include="bin\ImagePhone\SonyXperia5.jpg" />
+    <Content Include="bin\ImagePhone\SsA12.jpg" />
+    <Content Include="bin\ImagePhone\SsA53.jpg" />
+    <Content Include="bin\ImagePhone\SsA71.jpg" />
+    <Content Include="bin\ImagePhone\SsGalaxyJ6.jpg" />
+    <Content Include="bin\ImagePhone\SsGalaxyS21.jpg" />
+    <Content Include="bin\ImagePhone\SsGalaxyS22.jpg" />
+    <Content Include="bin\ImagePhone\SsS20.jpg" />
+    <Content Include="bin\ImagePhone\SsS22ultra.jpg" />
+    <Content Include="bin\ImagePhone\SsZFold4.jpg" />
+    <Content Include="bin\ImagePhone\SsZPlip3.jpg" />
+    <Content Include="bin\ImagePhone\VivoT1X.jpg" />
+    <Content Include="bin\ImagePhone\VivoV27e.jpg" />
+    <Content Include="bin\ImagePhone\VivoY50.jpg" />
+    <Content Include="bin\ImagePhone\VsmartActive3.jpg" />
+    <Content Include="bin\ImagePhone\VsmartAris.jpg" />
+    <Content Include="bin\ImagePhone\VsmartJoy4.jpg" />
+    <Content Include="bin\ImagePhone\VsmartLive.jpg" />
+    <Content Include="bin\ImagePhone\VsmartStar5.jpg" />
+    <Content Include="bin\ImagePhone\Xiaomi12pro.jpg" />
+    <Content Include="bin\ImagePhone\Xiaomi14.jpg" />
+    <Content Include="bin\ImagePhone\XiaomiMi11.jpg" />
+    <Content Include="bin\ImagePhone\XiaomiNote10.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
