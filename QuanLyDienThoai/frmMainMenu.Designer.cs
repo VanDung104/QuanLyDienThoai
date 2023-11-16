@@ -224,7 +224,6 @@
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Button btnTrangchu;
         private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.Button btnThongKe;
         private System.Windows.Forms.Button btnKhoHang;
         private System.Windows.Forms.Button btnDonHang;
         private System.Windows.Forms.Button btnNhacc;
@@ -232,5 +231,13 @@
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel panelDesktop;
+        private System.Windows.Forms.Button btnDangXuat;
+        private System.Windows.Forms.Button btnThongKe;
+        private System.Windows.Forms.Label lblChucVu;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

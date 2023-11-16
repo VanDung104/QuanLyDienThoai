@@ -63,6 +63,7 @@ namespace QuanLyDienThoai.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+
         internal static System.Drawing.Bitmap icons8_add {
             get {
                 object obj = ResourceManager.GetObject("icons8-add", resourceCulture);
@@ -73,6 +74,7 @@ namespace QuanLyDienThoai.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+
         internal static System.Drawing.Bitmap icons8_add__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-add (1)", resourceCulture);
@@ -83,6 +85,7 @@ namespace QuanLyDienThoai.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+
         internal static System.Drawing.Bitmap icons8_add_user_male_skin_type_7_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-add-user-male-skin-type-7-48", resourceCulture);
@@ -93,6 +96,7 @@ namespace QuanLyDienThoai.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+
         internal static System.Drawing.Bitmap icons8_bill_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-bill-48", resourceCulture);
@@ -103,6 +107,7 @@ namespace QuanLyDienThoai.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+
         internal static System.Drawing.Bitmap icons8_delete {
             get {
                 object obj = ResourceManager.GetObject("icons8-delete", resourceCulture);
@@ -113,6 +118,8 @@ namespace QuanLyDienThoai.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+
+       
         internal static System.Drawing.Bitmap icons8_edit {
             get {
                 object obj = ResourceManager.GetObject("icons8-edit", resourceCulture);
@@ -123,6 +130,7 @@ namespace QuanLyDienThoai.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+
         internal static System.Drawing.Bitmap icons8_edit_profile_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-edit-profile-48", resourceCulture);

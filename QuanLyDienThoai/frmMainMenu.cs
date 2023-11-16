@@ -12,6 +12,9 @@ namespace QuanLyDienThoai
 {
     public partial class frmMainMenu : Form
     {
+        public event EventHandler Logout;
+        public bool isExit = true;
+        public static string userName = "", quyen = "";
         private Form activeForm;
         public frmMainMenu()
         {
@@ -32,6 +35,7 @@ namespace QuanLyDienThoai
             childForm.BringToFront();
             childForm.Show();
             lblTitle.Text = childForm.Text;
+            
         }
         private void btnTrangchu_Click(object sender, EventArgs e)
         {
@@ -65,7 +69,53 @@ namespace QuanLyDienThoai
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.frmThongKe(), sender);
+            OpenChildForm(new Forms.Test(), sender);
+        }
+
+        private void frmMainMenu_Load(object sender, EventArgs e)
+        {
+            
+            lblChucVu.Text = quyen == "User" ? "Nhân viên" : "Quản lý";
+            lblUsername.Text = userName ;
+            if(quyen == "User")
+            {
+                button2.Visible = false;
+                button1.Visible = false;
+            }
+        }
+
+        private void frmMainMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (isExit)
+            {
+                if (MessageBox.Show("Ban muon thoat chuong trinh", "Canh bao", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
+        private void frmMainMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (isExit)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.ThongKeDoanhThu(), sender);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FrmQuanLiNhanVien(), sender);
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            Logout(this, new EventArgs());
         }
     }
 }

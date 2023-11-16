@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyDienThoai.Forms
 {
-    public partial class frmThongKe : Form
+    public partial class Test : Form
     {
-        public frmThongKe()
+        public Test()
         {
             InitializeComponent();
         }

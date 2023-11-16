@@ -1,6 +1,6 @@
 ﻿namespace QuanLyDienThoai.Forms
 {
-    partial class frmThongKe
+    partial class Test
     {
         /// <summary>
         /// Required designer variable.
